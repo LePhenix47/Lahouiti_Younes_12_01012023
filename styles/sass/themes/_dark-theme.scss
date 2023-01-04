@@ -1,0 +1,46 @@
+@media (prefers-color-scheme: dark) {
+    //SASS variables
+    $body-bg-color: black;
+    $header-sidebar-bg-color: #020203; //Unchanged
+
+    $scrollbar-track-bg-color: white;
+    $scrollbar-thumb-bg-color: white;
+    $scrollbar-thumb-bg-color--hover: white;
+    $scrollbar-thumb-bg-color--active: white;
+
+
+    $bg-color-primary: red; //Unchanged
+    $bg-color-secondary: #cfd4d7;
+    $bg-color-tertiary: #040404;
+
+    $text-color-primary: white;
+    $text-color-secondary: #646879;
+    $text-color-tertiary: red; //Unchanged
+    $text-color-quaternary: black;
+
+    $bars-bg-color--hover: #1f1f1f;
+
+
+    //CSS variables
+    :root {
+        --body-bg-color:#{$body-bg-color};
+        --header-sidebar-bg-color:#{$header-sidebar-bg-color};
+
+        --scrollbar-track-bg-color: #{$scrollbar-track-bg-color};
+        --scrollbar-thumb-bg-color: #{$scrollbar-thumb-bg-color};
+        --scrollbar-thumb-bg-color--hover: #{$scrollbar-thumb-bg-color--hover};
+        --scrollbar-thumb-bg-color--active: #{$scrollbar-thumb-bg-color--active};
+
+        --bg-color-primary:#{$bg-color-primary};
+        --bg-color-secondary:#{$bg-color-secondary};
+        --bg-color-tertiary:#{$bg-color-tertiary};
+
+
+        --text-color-primary:#{$text-color-primary};
+        --text-color-secondary:#{$text-color-secondary};
+        --text-color-tertiary:#{$text-color-tertiary};
+        --text-color-quaternary:#{$text-color-quaternary};
+
+        --bars-bg-color--hover:#{$bars-bg-color--hover};
+    }
+}

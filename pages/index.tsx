@@ -1,10 +1,9 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "../styles/Home.module.css";
 import Script from "next/script";
 
 //Index.tsx → Main page at the route "/"
+// ⚠ VERY IMPORTANT: in Next.js, routes are automatically created whenever we add a new page
+
 export default function Home() {
   return (
     <>
@@ -12,7 +11,6 @@ export default function Home() {
         {/*
          <!-- Meta tags-->
          */}
-        <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="color-scheme" content="dark light" />
         <meta
@@ -27,10 +25,7 @@ export default function Home() {
           property="og:description"
           content="Bienvenue dans la page de profil de SportSee!"
         />
-        <meta
-          property="og:image"
-          content="../public/images/icons/sport-see-icon.png"
-        />
+        <meta property="og:image" content="/images/icons/sport-see-icon.png" />
         <meta property="og:url" content="www.sport-see.com" />
 
         {/*
@@ -44,7 +39,7 @@ export default function Home() {
         <link
           rel="icon"
           type="image/png"
-          href="../public/images/icons/sport-see-icon.png"
+          href="/images/icons/sport-see-icon.png"
         />
 
         {/*     
@@ -67,11 +62,11 @@ export default function Home() {
         {/*    
               <!--D3 packages--> 
                   */}
-        <Script src="https://cdn.jsdelivr.net/npm/d3@7"></Script>
-        <Script src="https://cdn.jsdelivr.net/npm/d3-scale@4"></Script>
+        <Script src="https://cdn.jsdelivr.net/npm/d3@7" defer></Script>
+        <Script src="https://cdn.jsdelivr.net/npm/d3-scale@4" defer></Script>
       </Head>
-      <main className={styles.main}>
-        <h1>Test </h1>
+      <main>
+        <h1 className="test">Test </h1>
       </main>
     </>
   );
