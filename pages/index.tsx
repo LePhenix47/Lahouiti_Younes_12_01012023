@@ -1,8 +1,9 @@
 import Head from "next/head";
 import Script from "next/script";
 
-//Index.tsx → Main page at the route "/"
 // ⚠ VERY IMPORTANT: in Next.js, routes are automatically created whenever we add a new page
+
+//index.tsx → Main page at the route "/"
 
 export default function Home() {
   return (
@@ -41,29 +42,6 @@ export default function Home() {
           type="image/png"
           href="/images/icons/sport-see-icon.png"
         />
-
-        {/*     
-        <!-- Fonts -->
-         */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
-          rel="stylesheet"
-        />
-
-        {/*    
-          <!--Third-party scripts--> 
-              */}
-        {/*    
-              <!--D3 packages--> 
-                  */}
-        <Script src="https://cdn.jsdelivr.net/npm/d3@7" defer></Script>
-        <Script src="https://cdn.jsdelivr.net/npm/d3-scale@4" defer></Script>
       </Head>
       <main>
         <h1 className="test">Test </h1>
