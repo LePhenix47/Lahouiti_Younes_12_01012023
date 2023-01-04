@@ -6,8 +6,10 @@ export default function Container(props: any) {
   return (
     <>
       <Header />
-      <NavSidebar />
-      {props.children}
+      <main className="content-wrapper">
+        <NavSidebar />
+        {props.children}
+      </main>
     </>
   );
 }

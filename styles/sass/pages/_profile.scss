@@ -1,3 +1,6 @@
 @use "../Utils/" as *;
 
-.profile {}
+.profile {
+    width: 100%;
+    min-height: 100vh;
+}

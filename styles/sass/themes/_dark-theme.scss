@@ -3,6 +3,7 @@
     $body-bg-color: black;
     $header-sidebar-bg-color: #020203; //Unchanged
 
+    $shadow-color: #ffffffbf;
     $scrollbar-track-bg-color: white;
     $scrollbar-thumb-bg-color: white;
     $scrollbar-thumb-bg-color--hover: white;
@@ -25,6 +26,8 @@
     :root {
         --body-bg-color:#{$body-bg-color};
         --header-sidebar-bg-color:#{$header-sidebar-bg-color};
+
+        --shadow-color: #{$shadow-color};
 
         --scrollbar-track-bg-color: #{$scrollbar-track-bg-color};
         --scrollbar-thumb-bg-color: #{$scrollbar-thumb-bg-color};

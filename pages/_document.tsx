@@ -1,6 +1,5 @@
 //Next
 import { Html, Head, Main, NextScript } from "next/document";
-import Script from "next/script";
 
 //A custom Document can update the <html> and <body> tags used to render a Page
 export default function Document() {
@@ -16,8 +15,14 @@ export default function Document() {
           href="https://fonts.gstatic.com"
           crossOrigin="true"
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
           rel="stylesheet"
         />
 
@@ -27,8 +32,8 @@ export default function Document() {
         {/*    
               <!--D3 packages--> 
                   */}
-        <Script src="https://cdn.jsdelivr.net/npm/d3@7" defer></Script>
-        <Script src="https://cdn.jsdelivr.net/npm/d3-scale@4" defer></Script>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3-scale@4" defer></script>
       </Head>
       <body>
         <Main />

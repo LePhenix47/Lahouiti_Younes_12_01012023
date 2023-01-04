@@ -1,5 +1,19 @@
+//React
 import React from "react";
 
-export default function SidebarIcon() {
-  return <div>SidebarIcon</div>;
+//Next
+import Image from "next/image";
+
+export default function SidebarIcon({ iconType }: any) {
+  return (
+    <div className="side-bar__icon">
+      <Image
+        src={`/svg/${iconType}-icon.svg`}
+        alt={iconType}
+        width={42}
+        height={42}
+        className="side-bar__icon-image"
+      />
+    </div>
+  );
 }

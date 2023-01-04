@@ -1,3 +1,51 @@
 @use "../Utils/" as *;
 
-.footer {}
+.side-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    box-shadow: 0px 10px 10px var(--shadow-color);
+
+    width: 100px;
+    height: auto;
+
+    background-color: var(--header-sidebar-bg-color);
+
+    &__nav {
+        height: inherit;
+
+    }
+
+    &__unordered-list {
+        height: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    &__list-item {
+        display: inherit;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    &__link {
+        background-color: white;
+
+        padding: 13px;
+
+        border-radius: 6px;
+    }
+
+    &__copyright {
+        rotate: 270deg;
+        color: var(--header-sidebar-color);
+        white-space: nowrap;
+    }
+
+
+}

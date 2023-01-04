@@ -6,6 +6,7 @@ import Script from "next/script";
 //index.tsx → Main page at the route "/"
 
 export default function Home() {
+  // console.log(d3);
   return (
     <>
       <Head>
@@ -43,9 +44,9 @@ export default function Home() {
           href="/images/icons/sport-see-icon.png"
         />
       </Head>
-      <main>
+      <section className="profile">
         <h1 className="test">Test </h1>
-      </main>
+      </section>
     </>
   );
 }
