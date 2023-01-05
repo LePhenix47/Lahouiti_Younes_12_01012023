@@ -32,8 +32,8 @@ export default function Document() {
         {/*    
               <!--D3 packages--> 
                   */}
-        <script src="https://cdn.jsdelivr.net/npm/d3@7" defer></script>
-        <script src="https://cdn.jsdelivr.net/npm/d3-scale@4" defer></script>
+        {/* <script src="https://cdn.jsdelivr.net/npm/d3@7" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3-scale@4" defer></script> */}
       </Head>
       <body>
         <Main />

@@ -1,6 +1,12 @@
+//React
+import { useEffect } from "react";
+
 //Next
 import Head from "next/head";
 import Script from "next/script";
+
+//D3
+import * as d3 from "d3";
 
 //Components
 import Chart from "../components/Chart/Chart";
@@ -11,6 +17,15 @@ import KeyDataCard from "../components/KeyDataCard/KeyDataCard";
 
 export default function Home() {
   // console.log(d3);
+  useEffect(() => {
+    d3.select("section.chart")
+      .data([1, 2, 3])
+      .enter()
+      .append("rect")
+      .text((data) => {
+        return data;
+      });
+  }, []);
   return (
     <>
       <Head>
