@@ -6,10 +6,10 @@ $header-sidebar-color: white;
 
 $shadow-color: rgba(0, 0, 0, 0.75);
 
-$scrollbar-track-bg-color: black;
-$scrollbar-thumb-bg-color: black;
-$scrollbar-thumb-bg-color--hover: black;
-$scrollbar-thumb-bg-color--active: black;
+$scrollbar-track-bg-color: rgb(211, 211, 211);
+$scrollbar-thumb-bg-color: rgb(139, 140, 140);
+$scrollbar-thumb-bg-color--hover: darken($scrollbar-thumb-bg-color, 10%);
+$scrollbar-thumb-bg-color--active: darken($scrollbar-thumb-bg-color, 20%);
 
 $calorie-icon-color: #ff00001a;
 $proteins-icon-color: #4ab8ff1a;

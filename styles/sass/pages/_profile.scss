@@ -40,25 +40,31 @@
 
 
 .chart {
+    width: 100%;
+
     background-color: var(--bg-color-tertiary);
     border-radius: 5px;
 
     &__bar {
         grid-column-end: span 3;
 
-        height: 355px;
+        max-height: 355px;
+        min-width: 800px;
     }
 
     &__line {
         height: 265px;
+        min-width: 300px;
     }
 
     &__radar {
         height: 265px;
+        min-width: 300px;
     }
 
     &__gauge {
         height: 265px;
+        min-width: 300px;
     }
 }
 

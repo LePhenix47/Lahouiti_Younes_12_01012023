@@ -5,13 +5,12 @@
         background-color: var(--scrollbar-track-bg-color);
         border-radius: 100vmax;
         margin-block: 5px;
-        width: 10px;
+        width: 7px;
         min-height: 10px;
     }
 
     &::-webkit-scrollbar-thumb {
         background-color: var(--scrollbar-thumb-bg-color);
-        border: 3px solid var(--body-bg-color);
         border-radius: 100vmax;
 
         &:hover {
