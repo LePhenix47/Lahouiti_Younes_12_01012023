@@ -23,11 +23,21 @@
     &__data-container {
         display: flex;
         gap: 30px;
+
+        margin-top: 50px;
+
+        @include laptop-only {
+            flex-direction: column;
+        }
     }
 
 
     &__charts-data {
         @include grid(2, 3, 30px);
+
+        @include laptop-only {
+            @include grid(4, 1, 30px)
+        }
     }
 
     &__key-data {
@@ -47,6 +57,10 @@
 
     &__bar {
         grid-column-end: span 3;
+
+        @include laptop-only {
+            grid-column-end: auto;
+        }
 
         max-height: 355px;
         min-width: 800px;

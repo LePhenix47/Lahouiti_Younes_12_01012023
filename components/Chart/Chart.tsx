@@ -6,9 +6,8 @@ export default function Chart({ chartType, data }: any) {
 
   return (
     <section className={`chart chart__${chartType}`}>
-      {chartType}
       <svg
-        viewBox={`0 0 100 ${chartIsBarChart ? "35" : "100"}`}
+        viewBox={`0 0 95 ${chartIsBarChart ? "35" : "84"}`}
         xmlns="http://www.w3.org/2000/svg"
       ></svg>
     </section>

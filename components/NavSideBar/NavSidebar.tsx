@@ -34,7 +34,7 @@ export default function NavSidebar() {
           </li>
         </ul>
       </nav>
-      <small className="side-bar__copyright">Copyright, SportSee 2020</small>
+      <small className="side-bar__copyright">Copyright, SportSee 2020 ©</small>
     </aside>
   );
 }

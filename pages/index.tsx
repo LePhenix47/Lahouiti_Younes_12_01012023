@@ -74,10 +74,10 @@ export default function Home() {
                 })}
               })
               */}
-              <KeyDataCard dataType={"calorieCount"} />
-              <KeyDataCard dataType={"proteinCount"} />
-              <KeyDataCard dataType={"carbohydrateCount"} />
-              <KeyDataCard dataType={"lipidCount"} />
+              <KeyDataCard dataType={"calorieCount"} data={""} />
+              <KeyDataCard dataType={"proteinCount"} data={""} />
+              <KeyDataCard dataType={"carbohydrateCount"} data={""} />
+              <KeyDataCard dataType={"lipidCount"} data={""} />
             </section>
           </div>
         </div>
