@@ -1,9 +1,13 @@
+//Next
 import Head from "next/head";
 import Script from "next/script";
 
-// ⚠ VERY IMPORTANT: in Next.js, routes are automatically created whenever we add a new page
+//Components
+import Chart from "../components/Chart/Chart";
+import KeyDataCard from "../components/KeyDataCard/KeyDataCard";
 
-//index.tsx → Main page at the route "/"
+// INFO: in Next.js, routes are automatically created whenever we add a new page
+//⚠ VERY IMPORTANT: index.tsx → Main page at the route "/" must not have its name changed
 
 export default function Home() {
   // console.log(d3);
@@ -45,7 +49,38 @@ export default function Home() {
         />
       </Head>
       <section className="profile">
-        <h1 className="test">Test </h1>
+        <div className="profile__content">
+          <h1 className="profile__greeting-sentence">
+            Bonjour <span className="profile__name">Thomas</span>
+          </h1>
+          <p className="profile__recap-sentence">
+            Félicitations ! Vous avez explosé vos objectifs hier 👏
+          </p>
+
+          <div className="profile__data-container">
+            <section className="profile__charts-data">
+              <Chart chartType="bar" data={""} />
+              <Chart chartType="line" data={""} />
+              <Chart chartType="radar" data={""} />
+              <Chart chartType="gauge" data={""} />
+            </section>
+            <section className="profile__key-data">
+              {/* 
+              data.map((keyData)=>{
+                keyData.map((typeAmount, index)=>{
+                  //Props names → Object.getOwnPropertyNames(typeAmount)
+                  const typeOfData = Object.properties(typeAmount)
+                  <KeyDataCard cardType={typeAmount} key={`${typeAmount}-${index}`}/>
+                })}
+              })
+              */}
+              <KeyDataCard dataType={"calorieCount"} />
+              <KeyDataCard dataType={"proteinCount"} />
+              <KeyDataCard dataType={"carbohydrateCount"} />
+              <KeyDataCard dataType={"lipidCount"} />
+            </section>
+          </div>
+        </div>
       </section>
     </>
   );

@@ -75,3 +75,12 @@
     -o-object-position: center;
     object-position: center;
 }
+
+
+//Mixin to make a single line ellipsis for our text
+//⚠ The parent may need a "overflow" set to "hidden" in order for it to properly work
+@mixin text-ellipsis-effect {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

@@ -11,10 +11,16 @@ $scrollbar-thumb-bg-color: black;
 $scrollbar-thumb-bg-color--hover: black;
 $scrollbar-thumb-bg-color--active: black;
 
+$calorie-icon-color: #ff00001a;
+$proteins-icon-color: #4ab8ff1a;
+$carbohydrates-icon-color: #fdcc0c1a;
+$fats-icon-color: #fd51811a;
+
+
 
 $bg-color-primary: red;
 $bg-color-secondary: #282D30;
-$bg-color-tertiary: #FBFBFB;
+$bg-color-tertiary: #f1f0f0;
 
 $text-color-primary: black;
 $text-color-secondary: #74798C;
@@ -31,6 +37,11 @@ $bars-bg-color--hover: #C4C4C480;
     --header-sidebar-color:#{$header-sidebar-color};
 
     --shadow-color: #{$shadow-color};
+
+    --calorie-icon-color: #{$calorie-icon-color};
+    --proteins-icon-color: #{$proteins-icon-color};
+    --carbohydrates-icon-color: #{$carbohydrates-icon-color};
+    --fats-icon-color: #{$fats-icon-color};
 
     --scrollbar-track-bg-color: #{$scrollbar-track-bg-color};
     --scrollbar-thumb-bg-color: #{$scrollbar-thumb-bg-color};

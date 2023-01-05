@@ -1,4 +1,7 @@
+//React
 import React from "react";
+
+//Next
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,7 +11,7 @@ export default function Header() {
     <header className="header">
       <div className="header__page-logo">
         <Image
-          src="/images/icons/sport-see-full-LOGO.png"
+          src="/images/icons/sport-see-full-LOGO.svg"
           alt="Logo du site de SportSee"
           width={178}
           height={60}

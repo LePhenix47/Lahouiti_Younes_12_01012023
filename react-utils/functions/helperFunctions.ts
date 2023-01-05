@@ -7,23 +7,17 @@ export function log(message: string) {
 export function formatText(string: string, option: string) {
   let formattedOption = option.toLowerCase().trim();
 
-  let stringArray = string.split(" ");
-
   switch (formattedOption) {
     case "lowercase": {
-      for (let i = 0; i < stringArray.length; i++) {
-        stringArray[i] = stringArray[i].toLowerCase();
-      }
-      return stringArray.toString();
+      return string.toLowerCase();
     }
 
     case "uppercase": {
-      for (let i = 0; i < stringArray.length; i++) {
-        stringArray[i] = stringArray[i].toUpperCase();
-      }
-      return stringArray.toString();
+      return string.toUpperCase();
     }
+
     case "titlecase": {
+      let stringArray = string.split(" ");
       for (let i = 0; i < stringArray.length; i++) {
         stringArray[i] =
           stringArray[i].substring(0, 1).toUpperCase() +
@@ -32,9 +26,10 @@ export function formatText(string: string, option: string) {
       stringArray = stringArray.concat();
       return stringArray.toString();
     }
+
     default: {
       throw new Error(
-        "Formatting text error: option passed in argument is unknown"
+        "Formatting text error: unknown option passed in argument"
       );
     }
   }
@@ -44,10 +39,26 @@ export function formatText(string: string, option: string) {
 //ex: "crème brûlée" → "creme brulee"
 export function normalizeString(string: string) {
   if (typeof string !== "string") {
-    log("Value passed in argument is not a string");
+    log("Value passed in argument is not a string !");
     return;
   }
   return string
     .normalize("NFD") // returns the unicode NORMALIZATION FORM of the string using a canonical DECOMPOSITION (NFD).
     .replace(/[\u0300-\u036f]/g, "");
+}
+
+//Split a string into an array separating each word with an uppercase on it
+//ex: "testColor" → ["test","Color"] → ["test", "color"] → "test-color"
+export function splitOnUpperCase(string: string): string {
+  let newString: string[] = string.split(/(?=[A-Z])/);
+
+  for (let i = 0; i < newString.length; i++) {
+    newString[i] = formatText(newString[i], "lowercase");
+  }
+
+  let formattedString = newString.reduce((accumulated, currentValue) => {
+    return accumulated + "-" + currentValue;
+  });
+
+  return formattedString;
 }
