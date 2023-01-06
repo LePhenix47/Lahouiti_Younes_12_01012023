@@ -16,7 +16,8 @@ $proteins-icon-color: #4ab8ff1a;
 $carbohydrates-icon-color: #fdcc0c1a;
 $fats-icon-color: #fd51811a;
 
-
+$spin-loader-ball-bg-color-from: rgb(128, 128, 128);
+$spin-loader-ball-bg-color-to: rgb(168, 168, 168);
 
 $bg-color-primary: red;
 $bg-color-secondary: #282D30;
@@ -42,6 +43,9 @@ $bars-bg-color--hover: #C4C4C480;
     --proteins-icon-color: #{$proteins-icon-color};
     --carbohydrates-icon-color: #{$carbohydrates-icon-color};
     --fats-icon-color: #{$fats-icon-color};
+
+    --spin-loader-ball-bg-color-from: #{$spin-loader-ball-bg-color-from};
+    --spin-loader-ball-bg-color-to: #{$spin-loader-ball-bg-color-to};
 
     --scrollbar-track-bg-color: #{$scrollbar-track-bg-color};
     --scrollbar-thumb-bg-color: #{$scrollbar-thumb-bg-color};

@@ -1,0 +1,33 @@
+@use "../Utils/" as *;
+
+.spin-loader {
+    width: 100%;
+    height: 95vh;
+
+    z-index: 0;
+
+    background-color: var(--body-bg-color);
+
+    @include center-flex(15px);
+
+    &__ball {
+        aspect-ratio: 1/1;
+        border-radius: 25%;
+        height: 50px;
+        background-image: linear-gradient(45deg, var(--spin-loader-ball-bg-color-from), var(--spin-loader-ball-bg-color-to));
+
+        //SASS For loop starting from 1 and ending to 4 (excluded)
+        // Mathematical range notation: [1, 4[
+        @for $i from 1 to 4 {
+            &--#{$i} {
+                animation-name: blink;
+                animation-duration: 500ms;
+                animation-timing-function: ease-in-out;
+                animation-fill-mode: forwards;
+                animation-direction: alternate-reverse;
+                animation-iteration-count: infinite;
+                animation-delay: 250ms * $i;
+            }
+        }
+    }
+}

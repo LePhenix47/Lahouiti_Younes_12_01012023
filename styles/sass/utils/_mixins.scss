@@ -76,6 +76,13 @@
     object-position: center;
 }
 
+//Mixin to make the image take the set width and height without deforming it but without filling the entire container 
+//And also to remove any background in the image itself (⚠ Not in CSS!)
+@mixin contain-image {
+    object-fit: contain;
+    mix-blend-mode: color-burn;
+}
+
 
 //Mixin to make a single line ellipsis for our text
 //⚠ The parent may need a "overflow" set to "hidden" in order for it to properly work

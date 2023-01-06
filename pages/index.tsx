@@ -1,5 +1,5 @@
 //React
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 
 //Next
 import Head from "next/head";
@@ -11,21 +11,25 @@ import * as d3 from "d3";
 //Components
 import Chart from "../components/Chart/Chart";
 import KeyDataCard from "../components/KeyDataCard/KeyDataCard";
+import AppService from "../services/_app.service";
+import SpinLoader from "../components/SpinLoader/SpinLoader";
 
 // INFO: in Next.js, routes are automatically created whenever we add a new page
 //⚠ VERY IMPORTANT: index.tsx → Main page at the route "/" must not have its name changed
 
 export default function Home() {
-  // console.log(d3);
-  useEffect(() => {
-    d3.select("section.chart")
-      .data([1, 2, 3])
-      .enter()
-      .append("rect")
-      .text((data) => {
-        return data;
-      });
-  }, []);
+  const fetchedData = new AppService().getUserInfo(12);
+
+  useMemo(() => {
+    console.log(fetchedData);
+  }, [fetchedData]);
+
+  const { data, isLoading, hasError, errorMessage } = fetchedData;
+
+  if (isLoading) {
+    return <SpinLoader />;
+  }
+
   return (
     <>
       <Head>

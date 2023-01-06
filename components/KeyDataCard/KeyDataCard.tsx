@@ -7,7 +7,7 @@ import Image from "next/image";
 //Utils
 import { splitOnUpperCase } from "../../react-utils/functions/helperFunctions";
 
-export default function KeyDataCard({ dataType, data }: any) {
+export default function KeyDataCard({ dataType }: any) {
   const formattedClass = splitOnUpperCase(dataType);
 
   return (
