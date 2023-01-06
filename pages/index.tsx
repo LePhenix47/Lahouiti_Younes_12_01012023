@@ -1,5 +1,5 @@
 //React
-import { useEffect, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 
 //Next
 import Head from "next/head";
@@ -13,25 +13,81 @@ import Chart from "../components/Chart/Chart";
 import KeyDataCard from "../components/KeyDataCard/KeyDataCard";
 import AppService from "../services/_app.service";
 import SpinLoader from "../components/SpinLoader/SpinLoader";
+import {
+  getObjectProperties,
+  getObjectValues,
+} from "../react-utils/functions/helperFunctions";
 
 // INFO: in Next.js, routes are automatically created whenever we add a new page
 //⚠ VERY IMPORTANT: index.tsx → Main page at the route "/" must not have its name changed
 
 export default function Home() {
-  const fetchedData = new AppService().getUserInfo(12);
+  //We recover the userId through the URL parameters
+  let userId = 12;
 
-  useMemo(() => {
-    console.log(fetchedData);
-  }, [fetchedData]);
+  //We initialise the app service which is going to make the API calls for us
+  const dataAppService = new AppService();
 
-  const { data, isLoading, hasError, errorMessage } = fetchedData;
+  //Data for the: firstName, gauge chart and the "key data cards"
+  const generalInfoData = dataAppService.getUserInfo(userId);
 
-  if (isLoading) {
+  //Data for the bars chart
+  const activityInfoData = dataAppService.getActivityInfo(userId);
+
+  //Data for the line chart
+  const sessionsInfoData = dataAppService.getSessionsInfo(userId);
+
+  //Data for the radar chart
+  const performanceInfoData = dataAppService.getPerformanceInfo(userId);
+
+  const fetchedDataArray = [
+    generalInfoData,
+    activityInfoData,
+    sessionsInfoData,
+    performanceInfoData,
+  ];
+
+  //Local states:
+  //First name of the user
+  const [firstName, setFirstName] = useState<string>("");
+
+  //
+  let keyValuesDataArray: any = [];
+  let keyPropsDataArray: any = [];
+
+  useEffect(() => {
+    const keyData = generalInfoData.data?.data?.keyData;
+    console.log(keyData);
+
+    const userInfos = generalInfoData.data?.data?.userInfos;
+    console.log(userInfos);
+
+    const dataIsDefined: boolean = !!generalInfoData.data?.data;
+
+    if (dataIsDefined) {
+      setFirstName(userInfos?.firstName);
+      keyValuesDataArray = getObjectValues(keyData);
+      keyPropsDataArray = getObjectProperties(keyData);
+    }
+  });
+
+  //Boolean condition to check if all the different data across all fetch requests are loaded
+  const dataIsLoading: boolean = fetchedDataArray.some((fetchedData) => {
+    return fetchedData.isLoading;
+  });
+
+  //If the data is loading then show the spin loader
+  if (dataIsLoading) {
     return <SpinLoader />;
   }
 
+  //Otherwise show the page
   return (
     <>
+      {/*   
+      Head
+*/}
+
       <Head>
         {/*
          <!-- Meta tags-->
@@ -67,10 +123,15 @@ export default function Home() {
           href="/images/icons/sport-see-icon.png"
         />
       </Head>
+
+      {/* 
+      
+      Body:
+      */}
       <section className="profile">
         <div className="profile__content">
           <h1 className="profile__greeting-sentence">
-            Bonjour <span className="profile__name">Thomas</span>
+            Bonjour <span className="profile__name">{firstName}</span>
           </h1>
           <p className="profile__recap-sentence">
             Félicitations ! Vous avez explosé vos objectifs hier 👏
@@ -84,15 +145,6 @@ export default function Home() {
               <Chart chartType="gauge" data={""} />
             </section>
             <section className="profile__key-data">
-              {/* 
-              data.map((keyData)=>{
-                keyData.map((typeAmount, index)=>{
-                  //Props names → Object.getOwnPropertyNames(typeAmount)
-                  const typeOfData = Object.properties(typeAmount)
-                  <KeyDataCard cardType={typeAmount} key={`${typeAmount}-${index}`}/>
-                })}
-              })
-              */}
               <KeyDataCard dataType={"calorieCount"} data={""} />
               <KeyDataCard dataType={"proteinCount"} data={""} />
               <KeyDataCard dataType={"carbohydrateCount"} data={""} />

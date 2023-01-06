@@ -62,3 +62,13 @@ export function splitOnUpperCase(string: string): string {
 
   return formattedString;
 }
+
+//Retrieves the values of an object inside an array
+export function getObjectValues(object: object): any {
+  return Object.values(object);
+}
+
+//Retrieves the properties of an object inside an array
+export function getObjectProperties(object: object): any {
+  return Object.keys(object);
+}
