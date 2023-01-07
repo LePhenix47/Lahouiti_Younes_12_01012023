@@ -1,0 +1,16 @@
+@use "../Utils/" as *;
+
+.error-404 {
+    @include center-flex-column(50px);
+    width: 100%;
+
+    text-align: center;
+
+    &__title {
+        font-weight: 400;
+    }
+
+    &__subtitle {
+        font-weight: 300;
+    }
+}

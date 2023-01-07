@@ -21,8 +21,7 @@ import {
 // INFO: in Next.js, routes are automatically created whenever we add a new page
 //⚠ VERY IMPORTANT: index.tsx → Main page at the route "/" must not have its name changed
 
-export default function Home(props: any) {
-  console.log({ props });
+export default function Home() {
   //We recover the userId through the URL parameters
   let userId = 12;
 
