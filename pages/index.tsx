@@ -21,7 +21,8 @@ import {
 // INFO: in Next.js, routes are automatically created whenever we add a new page
 //⚠ VERY IMPORTANT: index.tsx → Main page at the route "/" must not have its name changed
 
-export default function Home() {
+export default function Home(props: any) {
+  console.log({ props });
   //We recover the userId through the URL parameters
   let userId = 12;
 
@@ -154,3 +155,33 @@ export default function Home() {
     </>
   );
 }
+
+//Gets the data
+// export async function getStaticProps() {
+//   //We recover the userId through the URL parameters
+//   let userId = 12;
+
+//   //We initialise the app service which is going to make the API calls for us
+//   const dataAppService = new AppService();
+
+//   //Data for the: firstName, gauge chart and the "key data cards"
+//   const generalInfoData = dataAppService.getUserInfo(userId).data;
+
+//   //Data for the bars chart
+//   const activityInfoData = dataAppService.getActivityInfo(userId).data;
+
+//   //Data for the line chart
+//   const sessionsInfoData = dataAppService.getSessionsInfo(userId).data;
+
+//   //Data for the radar chart
+//   const performanceInfoData = dataAppService.getPerformanceInfo(userId).data;
+
+//   const fetchedDataArray: any[] = [
+//     generalInfoData,
+//     activityInfoData,
+//     sessionsInfoData,
+//     performanceInfoData,
+//   ];
+
+//   return { props: fetchedDataArray };
+// }
