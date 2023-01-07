@@ -11,7 +11,7 @@ import {
   formatText,
 } from "../../react-utils/functions/helperFunctions";
 
-export default function KeyDataCard({ dataType, test }: any) {
+export default function KeyDataCard({ dataType, keyCardData }: any) {
   //We format the string to make it lowercase and add dashes between every word
   const formattedClass = splitOnUpperCase(dataType);
 
@@ -23,10 +23,7 @@ export default function KeyDataCard({ dataType, test }: any) {
   nameOfType = formatText(nameOfType, "titlecase");
 
   //The type value contains the value with its unit
-  const typeValue = `${test} ${unit}`;
-
-  console.assert(!!test, "⚠ Prop 'test' is empty ⚠");
-  console.log({ test });
+  const typeValue = `${keyCardData?.[dataType]}${unit}`;
 
   return (
     <div className="key-data-card">

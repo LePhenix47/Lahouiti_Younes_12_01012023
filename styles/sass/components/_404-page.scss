@@ -7,10 +7,15 @@
     text-align: center;
 
     &__title {
-        font-weight: 400;
+        font-weight: 500;
     }
 
     &__subtitle {
+        font-weight: 400;
+    }
+
+    &__link {
         font-weight: 300;
+        text-decoration: underline;
     }
 }

@@ -11,26 +11,24 @@ import * as d3 from "d3";
 // import AppService from "../../services/_app.service";
 // import SpinLoader from "../SpinLoader/SpinLoader";
 
-export default function Chart({ chartType, data }: any) {
+export default function Chart({ chartType, chartData }: any) {
   const chartIsBarChart = chartType.includes("bar");
 
-  useEffect(() => {
-    // const container = d3
-    //   .select("section.chart > svg")
-    //   .selectAll("text")
-    //   .data([1, 2, 3, 4, 5, 6, 7, 8])
-    //   .enter()
-    //   .append("rect")
-    //   .attr("y", (data) => data)
-    //   .attr("x", (data) => data)
-    //   .attr("stroke", "blue")
-    //   .attr("width", (data) => `${data}px`)
-    //   .attr("height", (data) => `${data}px`);
-  });
+  console.log({ chartType, chartData });
 
-  // if (fetchedData.isLoading) {
-  //   return <SpinLoader />;
-  // }
+  useEffect(() => {
+    const container = d3
+      .select("section.chart > svg")
+      .selectAll("text")
+      .data([1, 2, 3, 4, 5, 6, 7, 8])
+      .enter()
+      .append("rect")
+      .attr("y", (data) => data)
+      .attr("x", (data) => data)
+      .attr("stroke", "blue")
+      .attr("width", (data) => `${data}px`)
+      .attr("height", (data) => `${data}px`);
+  });
 
   return (
     <section className={`chart chart__${chartType}`}>

@@ -59,7 +59,9 @@ export function splitString(
 //Split a string into an array separating each word with an uppercase on it
 //ex: "testColor" → ["test","Color"] → ["test", "color"] → "test-color"
 export function splitOnUpperCase(string: string): string {
+  //Regex for all the uppercase letters
   const uppercaseLettersREGEX: RegExp = /(?=[A-Z])/;
+
   let newString: string[] = splitString(string, uppercaseLettersREGEX);
 
   for (let i = 0; i < newString.length; i++) {

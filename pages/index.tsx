@@ -25,6 +25,9 @@ export default function Home() {
   //We recover the userId through the URL parameters
   let userId = 12;
 
+  /*
+    // App service
+  */
   //We initialise the app service which is going to make the API calls for us
   const dataAppService = new AppService();
 
@@ -40,19 +43,47 @@ export default function Home() {
   //Data for the radar chart
   const performanceInfoData = dataAppService.getPerformanceInfo(userId);
 
-  //Local states:
+  /*
+  //Local states:   
+  */
   //First name of the user
   const [firstName, setFirstName] = useState<string>("");
 
-  const [barsChartInfo, setBarsChartInfo] = useState<any>("");
+  //Data for the
+  const [keyCardData, setKeyCardData] = useState<any>("");
+
+  //Data for the
+  const [barsChartData, setBarsChartData] = useState<any>("");
+
+  //Data for the line chart
+  const [lineChartData, setLineChartData] = useState<any>("");
+
+  //Data for the radar chart
+  const [radarChartData, setRadarChartData] = useState<any>("");
+
+  //Data for the gauge chart
+  const [gaugeChartData, setGaugeChartData] = useState<any>("");
 
   useEffect(() => {
     const userInfos: any = generalInfoData.data?.data?.userInfos;
 
     const keyData: any = generalInfoData.data?.data?.keyData;
 
+    const gaugeData: any = generalInfoData.data?.data?.todayScore;
+
+    const barsData: any = activityInfoData.data?.data;
+
+    const lineData: any = sessionsInfoData.data?.data;
+
+    const radarData: any = performanceInfoData.data?.data;
+
     setFirstName(userInfos?.firstName);
-    setBarsChartInfo(keyData);
+    setKeyCardData(keyData);
+
+    setBarsChartData(barsData);
+    setLineChartData(lineData);
+    setRadarChartData(radarData);
+    setGaugeChartData(gaugeData);
   });
 
   //Boolean condition to check if all the different data across all fetch requests are loaded
@@ -83,16 +114,14 @@ export default function Home() {
         {/*
          <!-- Meta tags-->
          */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="color-scheme" content="dark light" />
+        <meta name="robots" content="index, follow" />
         <meta
           name="description"
           content="Bienvenue dans la page de profil de SportSee!"
         />
-        <meta name="robots" content="index, follow" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="SportSee" />
+        <meta property="og:title" content="Accueil" />
         <meta
           property="og:description"
           content="Bienvenue dans la page de profil de SportSee!"
@@ -103,7 +132,7 @@ export default function Home() {
         {/*
          <!--Title--> 
          */}
-        <title>SportSee</title>
+        <title>Accueil</title>
 
         {/*
          <!--Page logo--> 
@@ -130,21 +159,26 @@ export default function Home() {
 
           <div className="profile__data-container">
             <section className="profile__charts-data">
-              <Chart chartType="bar" data={""} />
-              <Chart chartType="line" data={""} />
-              <Chart chartType="radar" data={""} />
-              <Chart chartType="gauge" data={""} />
+              <Chart chartType="bar" chartData={barsChartData} />
+              <Chart chartType="line" chartData={lineChartData} />
+              <Chart chartType="radar" chartData={radarChartData} />
+              <Chart chartType="gauge" chartData={gaugeChartData} />
             </section>
-            <section className="profile__key-data">
-              {}
 
-              <KeyDataCard dataType={"calorieCount"} test={barsChartInfo} />
-              <KeyDataCard dataType={"proteinCount"} test={barsChartInfo} />
+            <section className="profile__key-data">
+              <KeyDataCard
+                dataType={"calorieCount"}
+                keyCardData={keyCardData}
+              />
+              <KeyDataCard
+                dataType={"proteinCount"}
+                keyCardData={keyCardData}
+              />
               <KeyDataCard
                 dataType={"carbohydrateCount"}
-                test={barsChartInfo}
+                keyCardData={keyCardData}
               />
-              <KeyDataCard dataType={"lipidCount"} test={barsChartInfo} />
+              <KeyDataCard dataType={"lipidCount"} keyCardData={keyCardData} />
             </section>
           </div>
         </div>
