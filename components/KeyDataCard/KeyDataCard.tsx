@@ -25,7 +25,8 @@ export default function KeyDataCard({ dataType, test }: any) {
   //The type value contains the value with its unit
   const typeValue = `${test} ${unit}`;
 
-  // console.log(test);
+  console.assert(!!test, "⚠ Prop 'test' is empty ⚠");
+  console.log({ test });
 
   return (
     <div className="key-data-card">

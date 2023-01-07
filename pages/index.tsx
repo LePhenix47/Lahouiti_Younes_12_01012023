@@ -47,15 +47,13 @@ export default function Home() {
   const [barsChartInfo, setBarsChartInfo] = useState<any>("");
 
   useEffect(() => {
-    const dataIsDefined: boolean = !!generalInfoData.data?.data;
+    const userInfos: any = generalInfoData.data?.data?.userInfos;
 
-    const userInfos: object = generalInfoData.data?.data?.userInfos;
+    const keyData: any = generalInfoData.data?.data?.keyData;
 
-    if (dataIsDefined) {
-      setBarsChartInfo(activityInfoData);
-      setFirstName(userInfos?.firstName);
-    }
-  }, [firstName]);
+    setFirstName(userInfos?.firstName);
+    setBarsChartInfo(keyData);
+  });
 
   //Boolean condition to check if all the different data across all fetch requests are loaded
   const fetchedDataArray: any[] = [
@@ -155,7 +153,7 @@ export default function Home() {
   );
 }
 
-//Gets the data
+// //Gets the data
 // export async function getStaticProps() {
 //   //We recover the userId through the URL parameters
 //   let userId = 12;
