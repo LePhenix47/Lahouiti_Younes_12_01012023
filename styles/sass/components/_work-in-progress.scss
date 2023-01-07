@@ -1,0 +1,30 @@
+@use "../Utils/" as *;
+
+.work-in-progress {
+    @include center-flex-column;
+    width: 100%;
+
+    &__title {
+        @include center-flex;
+    }
+
+    &__hammer {
+        display: block;
+
+        translate: -10px -35px;
+
+        aspect-ratio: 1/1;
+        height: 48px;
+        line-height: 48px;
+
+        transform-origin: center 60%;
+
+        animation-name: hammering;
+        animation-timing-function: ease-in;
+        animation-duration: 500ms;
+        animation-direction: alternate;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+
+    }
+}

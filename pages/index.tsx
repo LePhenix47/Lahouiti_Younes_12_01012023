@@ -40,38 +40,31 @@ export default function Home() {
   //Data for the radar chart
   const performanceInfoData = dataAppService.getPerformanceInfo(userId);
 
-  const fetchedDataArray = [
+  //Local states:
+  //First name of the user
+  const [firstName, setFirstName] = useState<string>("");
+
+  const [barsChartInfo, setBarsChartInfo] = useState<any>("");
+
+  useEffect(() => {
+    const dataIsDefined: boolean = !!generalInfoData.data?.data;
+
+    const userInfos: object = generalInfoData.data?.data?.userInfos;
+
+    if (dataIsDefined) {
+      setBarsChartInfo(activityInfoData);
+      setFirstName(userInfos?.firstName);
+    }
+  }, [firstName]);
+
+  //Boolean condition to check if all the different data across all fetch requests are loaded
+  const fetchedDataArray: any[] = [
     generalInfoData,
     activityInfoData,
     sessionsInfoData,
     performanceInfoData,
   ];
 
-  //Local states:
-  //First name of the user
-  const [firstName, setFirstName] = useState<string>("");
-
-  //
-  let keyValuesDataArray: any = [];
-  let keyPropsDataArray: any = [];
-
-  useEffect(() => {
-    const keyData = generalInfoData.data?.data?.keyData;
-    console.log(keyData);
-
-    const userInfos = generalInfoData.data?.data?.userInfos;
-    console.log(userInfos);
-
-    const dataIsDefined: boolean = !!generalInfoData.data?.data;
-
-    if (dataIsDefined) {
-      setFirstName(userInfos?.firstName);
-      keyValuesDataArray = getObjectValues(keyData);
-      keyPropsDataArray = getObjectProperties(keyData);
-    }
-  });
-
-  //Boolean condition to check if all the different data across all fetch requests are loaded
   const dataIsLoading: boolean = fetchedDataArray.some((fetchedData) => {
     return fetchedData.isLoading;
   });
@@ -145,10 +138,15 @@ export default function Home() {
               <Chart chartType="gauge" data={""} />
             </section>
             <section className="profile__key-data">
-              <KeyDataCard dataType={"calorieCount"} data={""} />
-              <KeyDataCard dataType={"proteinCount"} data={""} />
-              <KeyDataCard dataType={"carbohydrateCount"} data={""} />
-              <KeyDataCard dataType={"lipidCount"} data={""} />
+              {}
+
+              <KeyDataCard dataType={"calorieCount"} test={barsChartInfo} />
+              <KeyDataCard dataType={"proteinCount"} test={barsChartInfo} />
+              <KeyDataCard
+                dataType={"carbohydrateCount"}
+                test={barsChartInfo}
+              />
+              <KeyDataCard dataType={"lipidCount"} test={barsChartInfo} />
             </section>
           </div>
         </div>

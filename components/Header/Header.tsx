@@ -23,13 +23,13 @@ export default function Header() {
           <Link href="/">
             <li className="header__list-item">Accueil</li>
           </Link>
-          <Link href="/">
+          <Link href="/profile-page">
             <li className="header__list-item">Profil</li>
           </Link>
-          <Link href="/">
+          <Link href="/settings">
             <li className="header__list-item">Réglages</li>
           </Link>
-          <Link href="/">
+          <Link href="/community">
             <li className="header__list-item">Communauté</li>
           </Link>
         </ul>

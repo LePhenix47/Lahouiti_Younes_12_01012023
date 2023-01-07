@@ -7,3 +7,14 @@
         opacity: 20%;
     }
 }
+
+
+@keyframes hammering {
+    from {
+        rotate: 45deg;
+    }
+
+    to {
+        rotate: -80deg;
+    }
+}

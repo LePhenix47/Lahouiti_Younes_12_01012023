@@ -47,10 +47,20 @@ export function normalizeString(string: string) {
     .replace(/[\u0300-\u036f]/g, "");
 }
 
+//Splits a string on a character, word or regular expression
+//ex: Split on every space → "hello world" → ["hello", "world"]
+export function splitString(
+  string: string,
+  character: string | RegExp
+): string[] {
+  return string.split(character);
+}
+
 //Split a string into an array separating each word with an uppercase on it
 //ex: "testColor" → ["test","Color"] → ["test", "color"] → "test-color"
 export function splitOnUpperCase(string: string): string {
-  let newString: string[] = string.split(/(?=[A-Z])/);
+  const uppercaseLettersREGEX: RegExp = /(?=[A-Z])/;
+  let newString: string[] = splitString(string, uppercaseLettersREGEX);
 
   for (let i = 0; i < newString.length; i++) {
     newString[i] = formatText(newString[i], "lowercase");
@@ -64,11 +74,21 @@ export function splitOnUpperCase(string: string): string {
 }
 
 //Retrieves the values of an object inside an array
-export function getObjectValues(object: object): any {
-  return Object.values(object);
+export function getObjectValues(object: object): any[] {
+  const objectIsDefined = !!object;
+
+  if (objectIsDefined) {
+    return Object.values(object);
+  }
+  return [];
 }
 
 //Retrieves the properties of an object inside an array
-export function getObjectProperties(object: object): any {
-  return Object.keys(object);
+export function getObjectProperties(object: object): any[] {
+  const objectIsDefined = !!object;
+
+  if (objectIsDefined) {
+    return Object.keys(object);
+  }
+  return [];
 }

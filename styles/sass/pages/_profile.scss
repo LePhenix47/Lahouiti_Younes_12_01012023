@@ -86,11 +86,16 @@
 .key-data-card {
 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 
-    min-width: 280px;
+    width: 280px;
+
+    min-width: 250px;
+
     height: 125px;
+
+    padding: 0 20px;
 
     background-color: var(--bg-color-tertiary);
     border-radius: 5px;
@@ -102,6 +107,7 @@
         @include center-flex-column;
 
         padding: 20px;
+
         border-radius: inherit;
 
         &--calorie-count {
@@ -127,6 +133,8 @@
         flex-direction: column;
         justify-content: flex-start;
 
+        margin: auto;
+
         gap: 5px;
 
         overflow: hidden;
@@ -137,6 +145,7 @@
     }
 
     &__count-type {
+        color: var(--text-color-secondary);
         @include text-ellipsis-effect;
     }
 }
@@ -145,8 +154,6 @@
 .svg {
     width: 100%;
     height: 100px;
-
-    // aspect-ratio: 1/1;
 
     &__bg-bar {
         fill: var(--bg-color-tertiary);

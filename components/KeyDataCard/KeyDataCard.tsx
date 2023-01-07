@@ -5,10 +5,27 @@ import React from "react";
 import Image from "next/image";
 
 //Utils
-import { splitOnUpperCase } from "../../react-utils/functions/helperFunctions";
+import {
+  splitString,
+  splitOnUpperCase,
+  formatText,
+} from "../../react-utils/functions/helperFunctions";
 
-export default function KeyDataCard({ dataType }: any) {
+export default function KeyDataCard({ dataType, test }: any) {
+  //We format the string to make it lowercase and add dashes between every word
   const formattedClass = splitOnUpperCase(dataType);
+
+  //We define the unit of measurement
+  let unit = dataType === "calorieCount" ? "kCal" : "g";
+
+  //We make the name of the type on titlecase
+  let nameOfType = splitString(formattedClass, "-")[0];
+  nameOfType = formatText(nameOfType, "titlecase");
+
+  //The type value contains the value with its unit
+  const typeValue = `${test} ${unit}`;
+
+  console.log(test);
 
   return (
     <div className="key-data-card">
@@ -16,7 +33,7 @@ export default function KeyDataCard({ dataType }: any) {
         className={`key-data-card__image-container key-data-card__image-container--${formattedClass}`}
       >
         <Image
-          src={"/svg/calories-fire-icon.svg"}
+          src={`/svg/${nameOfType}.svg`}
           alt=""
           className="key-data-card__image"
           width={40}
@@ -24,8 +41,8 @@ export default function KeyDataCard({ dataType }: any) {
         />
       </div>
       <div className="key-data-card__text-container">
-        <h2 className="key-data-card__count">1,930kCal</h2>
-        <p className="key-data-card__count-type">Calories</p>
+        <h2 className="key-data-card__count">{typeValue}</h2>
+        <p className="key-data-card__count-type">{nameOfType + "s"}</p>
       </div>
     </div>
   );
