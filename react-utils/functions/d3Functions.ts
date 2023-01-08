@@ -75,7 +75,7 @@ export function drawGaugeChart(type: string, data: any) {
 
   const margins = { top: "20px", bottom: "20px", left: "20px", right: "20px" };
 
-  const container: any = d3.select(`svg#${type}`);
+  const container: any = d3.select(`svg#${type}`).data(data).enter();
 
   const gaugeText = container
     .select("text")

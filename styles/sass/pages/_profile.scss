@@ -81,6 +81,12 @@
         height: 265px;
         min-width: 300px;
     }
+
+
+    &__svg {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 
@@ -163,24 +169,24 @@
 }
 
 
-.svg {
-    width: 100%;
-    height: 100px;
+// .svg {
+//     width: 100%;
+//     height: 100px;
 
-    &__bg-bar {
-        fill: var(--bg-color-tertiary);
-    }
+//     &__bg-bar {
+//         fill: var(--bg-color-tertiary);
+//     }
 
-    &__bg-line {
-        fill: var(--bg-color-primary);
-    }
+//     &__bg-line {
+//         fill: var(--bg-color-primary);
+//     }
 
-    &__bg-radar {
-        fill: var(--bg-color-secondary);
-    }
+//     &__bg-radar {
+//         fill: var(--bg-color-secondary);
+//     }
 
-    &__bg-gauge {
-        fill: var(--bg-color-tertiary);
-    }
+//     &__bg-gauge {
+//         fill: var(--bg-color-tertiary);
+//     }
 
-}
+// }
