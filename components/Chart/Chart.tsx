@@ -4,12 +4,15 @@ import React, { useEffect } from "react";
 //Next
 
 //Utils
+import {
+  drawBarsChart,
+  drawLineChart,
+  drawRadarChart,
+  drawGaugeChart,
+} from "../../react-utils/functions/d3Functions";
 
 //D3.js
 import * as d3 from "d3";
-
-// import AppService from "../../services/_app.service";
-// import SpinLoader from "../SpinLoader/SpinLoader";
 
 export default function Chart({ chartType, chartData }: any) {
   const chartIsBarChart = chartType.includes("bar");
@@ -17,18 +20,28 @@ export default function Chart({ chartType, chartData }: any) {
   console.log({ chartType, chartData });
 
   useEffect(() => {
-    const container = d3
-      .select("section.chart > svg")
-      .selectAll("text")
-      .data([1, 2, 3, 4, 5, 6, 7, 8])
-      .enter()
-      .append("rect")
-      .attr("y", (data) => data)
-      .attr("x", (data) => data)
-      .attr("stroke", "blue")
-      .attr("width", (data) => `${data}px`)
-      .attr("height", (data) => `${data}px`);
-  });
+    switch (chartType) {
+      case "bar": {
+        drawBarsChart(chartData);
+        break;
+      }
+      case "line": {
+        drawLineChart(chartData);
+        break;
+      }
+      case "radar": {
+        drawRadarChart(chartData);
+        break;
+      }
+      case "gauge": {
+        drawGaugeChart(chartData);
+        break;
+      }
+      default: {
+        break;
+      }
+    }
+  }, [chartData]);
 
   return (
     <section className={`chart chart__${chartType}`}>

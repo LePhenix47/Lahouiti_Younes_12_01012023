@@ -78,11 +78,15 @@ export default function Home() {
     const radarData: any = performanceInfoData.data?.data;
 
     setFirstName(userInfos?.firstName);
+
     setKeyCardData(keyData);
 
     setBarsChartData(barsData);
+
     setLineChartData(lineData);
+
     setRadarChartData(radarData);
+
     setGaugeChartData(gaugeData);
   });
 
