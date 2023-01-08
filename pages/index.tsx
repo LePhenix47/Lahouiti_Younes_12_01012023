@@ -29,19 +29,19 @@ export default function Home() {
     // App service
   */
   //We initialise the app service which is going to make the API calls for us
-  const dataAppService = new AppService();
+  const dataAppService: any = new AppService();
 
   //Data for the: firstName, gauge chart and the "key data cards"
-  const generalInfoData = dataAppService.getUserInfo(userId);
+  const generalInfoData: any = dataAppService.getUserInfo(userId);
 
   //Data for the bars chart
-  const activityInfoData = dataAppService.getActivityInfo(userId);
+  const activityInfoData: any = dataAppService.getActivityInfo(userId);
 
   //Data for the line chart
-  const sessionsInfoData = dataAppService.getSessionsInfo(userId);
+  const sessionsInfoData: any = dataAppService.getSessionsInfo(userId);
 
   //Data for the radar chart
-  const performanceInfoData = dataAppService.getPerformanceInfo(userId);
+  const performanceInfoData: any = dataAppService.getPerformanceInfo(userId);
 
   /*
   //Local states:   
@@ -190,33 +190,3 @@ export default function Home() {
     </>
   );
 }
-
-// //Gets the data
-// export async function getStaticProps() {
-//   //We recover the userId through the URL parameters
-//   let userId = 12;
-
-//   //We initialise the app service which is going to make the API calls for us
-//   const dataAppService = new AppService();
-
-//   //Data for the: firstName, gauge chart and the "key data cards"
-//   const generalInfoData = dataAppService.getUserInfo(userId).data;
-
-//   //Data for the bars chart
-//   const activityInfoData = dataAppService.getActivityInfo(userId).data;
-
-//   //Data for the line chart
-//   const sessionsInfoData = dataAppService.getSessionsInfo(userId).data;
-
-//   //Data for the radar chart
-//   const performanceInfoData = dataAppService.getPerformanceInfo(userId).data;
-
-//   const fetchedDataArray: any[] = [
-//     generalInfoData,
-//     activityInfoData,
-//     sessionsInfoData,
-//     performanceInfoData,
-//   ];
-
-//   return { props: fetchedDataArray };
-// }

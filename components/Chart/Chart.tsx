@@ -22,19 +22,19 @@ export default function Chart({ chartType, chartData }: any) {
   useEffect(() => {
     switch (chartType) {
       case "bar": {
-        drawBarsChart(chartData);
+        drawBarsChart(chartType, chartData);
         break;
       }
       case "line": {
-        drawLineChart(chartData);
+        drawLineChart(chartType, chartData);
         break;
       }
       case "radar": {
-        drawRadarChart(chartData);
+        drawRadarChart(chartType, chartData);
         break;
       }
       case "gauge": {
-        drawGaugeChart(chartData);
+        drawGaugeChart(chartType, chartData);
         break;
       }
       default: {
@@ -48,9 +48,8 @@ export default function Chart({ chartType, chartData }: any) {
       <svg
         viewBox={`0 0 95 ${chartIsBarChart ? "35" : "84"}`}
         xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect className={`svg svg__bg-${chartType}`}></rect>
-      </svg>
+        id={chartType}
+      ></svg>
     </section>
   );
 }

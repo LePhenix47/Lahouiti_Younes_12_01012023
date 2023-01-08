@@ -28,6 +28,7 @@
 
         @include laptop-only {
             flex-direction: column;
+            gap: 100px;
         }
     }
 
@@ -36,7 +37,7 @@
         @include grid(2, 3, 30px);
 
         @include laptop-only {
-            @include grid(4, 1, 30px)
+            @include center-flex-column(50px)
         }
     }
 
@@ -59,7 +60,7 @@
         grid-column-end: span 3;
 
         @include laptop-only {
-            grid-column-end: auto;
+            height: 265px;
         }
 
         max-height: 355px;
@@ -90,6 +91,10 @@
     align-items: center;
 
     width: 280px;
+
+    @include laptop-only {
+        width: 100%;
+    }
 
     min-width: 250px;
 
@@ -136,6 +141,11 @@
         text-align: left;
 
         margin: auto auto auto 35px;
+
+        @include laptop-only {
+            text-align: center;
+            margin: auto;
+        }
 
         gap: 5px;
 
