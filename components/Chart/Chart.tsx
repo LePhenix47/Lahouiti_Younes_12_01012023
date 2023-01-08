@@ -9,10 +9,7 @@ import {
   drawLineChart,
   drawRadarChart,
   drawGaugeChart,
-} from "../../react-utils/functions/d3Functions";
-
-//D3.js
-import * as d3 from "d3";
+} from "../../react-utils/functions/chartjsFunctions";
 
 export default function Chart({ chartType, chartData }: any) {
   const chartIsBarChart = chartType.includes("bar");
@@ -45,11 +42,9 @@ export default function Chart({ chartType, chartData }: any) {
 
   return (
     <section className={`chart chart__${chartType}`}>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        id={chartType}
-        className={`chart__svg`}
-      ></svg>
+      <canvas id={chartType} className="chart__canvas">
+        Your browser does not support the canvas element.
+      </canvas>
     </section>
   );
 }

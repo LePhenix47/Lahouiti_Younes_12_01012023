@@ -1,22 +1,14 @@
 //React
-import { useState, useMemo, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 //Next
 import Head from "next/head";
-import Script from "next/script";
-
-//D3
-import * as d3 from "d3";
 
 //Components
 import Chart from "../components/Chart/Chart";
 import KeyDataCard from "../components/KeyDataCard/KeyDataCard";
 import AppService from "../services/_app.service";
 import SpinLoader from "../components/SpinLoader/SpinLoader";
-import {
-  getObjectProperties,
-  getObjectValues,
-} from "../react-utils/functions/helperFunctions";
 
 // INFO: in Next.js, routes are automatically created whenever we add a new page
 //⚠ VERY IMPORTANT: index.tsx → Main page at the route "/" must not have its name changed
@@ -170,19 +162,13 @@ export default function Home() {
             </section>
 
             <section className="profile__key-data">
+              <KeyDataCard dataType="calorieCount" keyCardData={keyCardData} />
+              <KeyDataCard dataType="proteinCount" keyCardData={keyCardData} />
               <KeyDataCard
-                dataType={"calorieCount"}
+                dataType="carbohydrateCount"
                 keyCardData={keyCardData}
               />
-              <KeyDataCard
-                dataType={"proteinCount"}
-                keyCardData={keyCardData}
-              />
-              <KeyDataCard
-                dataType={"carbohydrateCount"}
-                keyCardData={keyCardData}
-              />
-              <KeyDataCard dataType={"lipidCount"} keyCardData={keyCardData} />
+              <KeyDataCard dataType="lipidCount" keyCardData={keyCardData} />
             </section>
           </div>
         </div>
