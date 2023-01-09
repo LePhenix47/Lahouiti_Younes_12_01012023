@@ -1,5 +1,5 @@
 //React
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 //Components
 import BarsChart from "../BarsChart/BarsChart";
@@ -15,8 +15,9 @@ import {
   drawGaugeChart,
 } from "../../react-utils/functions/rechartjsFunctions";
 
-export default function Chart({ chartType, chartData }: any) {
+export default function Chart({ chartType, chartData }: any): any {
   // const chartIsBarChart = chartType.includes("bar");
+  const [initialRenderComplete, setInitialRenderComplete] = useState(false);
 
   console.log({ chartType, chartData });
 
@@ -43,7 +44,15 @@ export default function Chart({ chartType, chartData }: any) {
       break;
     }
   }
-  useEffect(() => {}, [chartData]);
+
+  // This useEffect will only run once, during the first render to avoid hydration issues
+  useEffect(() => {
+    setInitialRenderComplete(true);
+  }, []);
+
+  if (!initialRenderComplete) {
+    return;
+  }
 
   return (
     <section className={`chart chart__${chartType}`}>{renderChart}</section>

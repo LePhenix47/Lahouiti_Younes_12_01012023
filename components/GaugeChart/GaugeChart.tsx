@@ -11,32 +11,36 @@ import {
 } from "recharts";
 
 export default function GaugeChart({ data }: any) {
-  const test = [{ name: "a", value: 12 }];
+  const formattedData: {
+    name: string;
+    value: any;
+  }[] = [{ name: "a", value: data }];
+
   return (
     <>
       <p>gauge</p>
       <RadialBarChart
-        width={230}
+        width={330}
         height={250}
-        innerRadius="50%"
+        innerRadius="60%"
         outerRadius="80%"
-        data={test}
-        startAngle={180}
-        endAngle={0}
+        data={formattedData}
+        startAngle={0}
+        endAngle={360}
       >
         <RadialBar
-          label={{ fill: "#666", position: "insideStart" }}
+          label={{ fill: "blue", position: "insideStart" }}
           background
           dataKey="uv"
         />
-        <Legend
+        {/* <Legend
           iconSize={10}
           width={120}
           height={140}
           layout="vertical"
           verticalAlign="middle"
           align="right"
-        />
+        /> */}
         {/* <Tooltip /> */}
       </RadialBarChart>
     </>
