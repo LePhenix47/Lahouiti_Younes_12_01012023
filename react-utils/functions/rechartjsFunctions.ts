@@ -1,5 +1,5 @@
-//Chart.js
-import Chart from "chart.js/auto";
+//Rechart.js
+import { LineChart, Line } from "recharts";
 
 import { dimensionType, marginsType } from "../types/dimensionType";
 
@@ -39,5 +39,4 @@ export function drawGaugeChart(type: string, data: any) {
   if (dataIsUnefined) {
     return;
   }
-  //
 }

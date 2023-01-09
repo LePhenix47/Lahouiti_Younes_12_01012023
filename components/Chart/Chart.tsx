@@ -1,7 +1,11 @@
 //React
 import React, { useEffect } from "react";
 
-//Next
+//Components
+import BarsChart from "../BarsChart/BarsChart";
+import GaugeChart from "../GaugeChart/GaugeChart";
+import LineChart from "../LineChart/LineChart";
+import RadarChart from "../RadarChart/RadarChart";
 
 //Utils
 import {
@@ -9,42 +13,39 @@ import {
   drawLineChart,
   drawRadarChart,
   drawGaugeChart,
-} from "../../react-utils/functions/chartjsFunctions";
+} from "../../react-utils/functions/rechartjsFunctions";
 
 export default function Chart({ chartType, chartData }: any) {
-  const chartIsBarChart = chartType.includes("bar");
+  // const chartIsBarChart = chartType.includes("bar");
 
   console.log({ chartType, chartData });
 
-  useEffect(() => {
-    switch (chartType) {
-      case "bar": {
-        drawBarsChart(chartType, chartData);
-        break;
-      }
-      case "line": {
-        drawLineChart(chartType, chartData);
-        break;
-      }
-      case "radar": {
-        drawRadarChart(chartType, chartData);
-        break;
-      }
-      case "gauge": {
-        drawGaugeChart(chartType, chartData);
-        break;
-      }
-      default: {
-        break;
-      }
+  let renderChart: any = null;
+
+  switch (chartType) {
+    case "bar": {
+      renderChart = <BarsChart data={chartData} />;
+      break;
     }
-  }, [chartData]);
+    case "line": {
+      renderChart = <LineChart data={chartData} />;
+      break;
+    }
+    case "radar": {
+      renderChart = <RadarChart data={chartData} />;
+      break;
+    }
+    case "gauge": {
+      renderChart = <GaugeChart data={chartData} />;
+      break;
+    }
+    default: {
+      break;
+    }
+  }
+  useEffect(() => {}, [chartData]);
 
   return (
-    <section className={`chart chart__${chartType}`}>
-      <canvas id={chartType} className="chart__canvas">
-        Your browser does not support the canvas element.
-      </canvas>
-    </section>
+    <section className={`chart chart__${chartType}`}>{renderChart}</section>
   );
 }
