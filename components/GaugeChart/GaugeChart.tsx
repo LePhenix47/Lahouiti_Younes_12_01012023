@@ -37,7 +37,7 @@ export default function GaugeChart({ data }: any) {
           verticalAlign="middle"
           align="right"
         />
-        <Tooltip />
+        {/* <Tooltip /> */}
       </RadialBarChart>
     </>
   );

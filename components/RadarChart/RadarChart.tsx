@@ -15,7 +15,7 @@ export default function RadarChart({ data }: any) {
   return (
     <>
       <p>radar chart</p>
-      <RadarChartJS outerRadius={90} width={730} height={250} data={data}>
+      <RadarChartJS outerRadius={90} width={250} height={250} data={data}>
         <PolarGrid />
         <PolarAngleAxis dataKey="subject" />
         <PolarRadiusAxis angle={30} domain={[0, 150]} />
