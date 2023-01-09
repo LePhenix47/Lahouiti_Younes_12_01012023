@@ -11,11 +11,13 @@ import {
 } from "recharts";
 
 export default function GaugeChart({ data }: any) {
-  const percentageValue: number = data * 100;
+  const percentageValue: number = data * 100 * 8;
 
   const formattedData: {
     value: number;
   }[] = [{ value: percentageValue }];
+
+  const startAngleDegrees: number = 90;
 
   console.log(data);
 
@@ -26,15 +28,18 @@ export default function GaugeChart({ data }: any) {
       <RadialBarChart
         width={330}
         height={250}
-        innerRadius="70%"
+        innerRadius="65%"
         outerRadius="80%"
         data={formattedData}
-        startAngle={90}
-        endAngle={180 + formattedData[0].value}
-        fill="var(--bg-color-primary)"
-        stroke-linejoin="round"
+        startAngle={startAngleDegrees}
+        endAngle={startAngleDegrees + (percentageValue * 360) / 100}
       >
-        <RadialBar dataKey="value" />
+        <RadialBar
+          dataKey="value"
+          stroke-linejoin="round"
+          fill="var(--bg-color-primary)"
+          cornerRadius={100}
+        />
         {/* <Legend
           iconSize={10}
           width={120}

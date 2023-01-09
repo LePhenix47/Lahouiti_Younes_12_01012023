@@ -212,6 +212,13 @@
     position: relative;
     @include center-flex-column;
 
+    &::before {
+        content: "Score";
+        position: absolute;
+        top: 25px;
+        left: 30px;
+    }
+
     &__percentage {
         @include absolute-center;
     }
