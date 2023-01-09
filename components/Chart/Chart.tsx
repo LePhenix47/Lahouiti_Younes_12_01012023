@@ -14,6 +14,8 @@ import {
   drawRadarChart,
   drawGaugeChart,
 } from "../../react-utils/functions/rechartjsFunctions";
+import SpinLoader from "../SpinLoader/SpinLoader";
+import { ResponsiveContainer } from "recharts";
 
 export default function Chart({ chartType, chartData }: any): any {
   // const chartIsBarChart = chartType.includes("bar");
@@ -55,6 +57,8 @@ export default function Chart({ chartType, chartData }: any): any {
   }
 
   return (
-    <section className={`chart chart__${chartType}`}>{renderChart}</section>
+    <section className={`chart chart__${chartType}`}>
+      <ResponsiveContainer>{renderChart}</ResponsiveContainer>
+    </section>
   );
 }

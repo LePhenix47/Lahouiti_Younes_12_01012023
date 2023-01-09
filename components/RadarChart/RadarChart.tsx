@@ -12,12 +12,21 @@ import {
 } from "recharts";
 
 export default function RadarChart({ data }: any) {
+  const formattedData: {
+    // name: string;
+    value: any;
+  }[] = [{ value: 12 }];
+
   return (
-    <>
-      <p>radar chart</p>
-      <RadarChartJS outerRadius={90} width={250} height={250} data={data}>
+    <div className="radar-chart">
+      <RadarChartJS
+        outerRadius={90}
+        width={250}
+        height={250}
+        data={formattedData}
+      >
         <PolarGrid />
-        <PolarAngleAxis dataKey="subject" />
+        <PolarAngleAxis dataKey="value" />
         <PolarRadiusAxis angle={30} domain={[0, 150]} />
         <Radar
           name="Mike"
@@ -35,6 +44,6 @@ export default function RadarChart({ data }: any) {
         />
         <Legend />
       </RadarChartJS>
-    </>
+    </div>
   );
 }

@@ -45,7 +45,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 50px;
+        gap: 20px;
 
         @include laptop-only {
             gap: 35px;
@@ -59,6 +59,9 @@
 
     background-color: var(--bg-color-tertiary);
     border-radius: 5px;
+
+    overflow: hidden;
+
 
     &__bar {
         grid-column-end: span 3;
@@ -194,3 +197,31 @@
 //     }
 
 // }
+
+.bars-chart {}
+
+.line-chart {}
+
+.radar-chart {}
+
+
+.gauge-chart {
+    width: inherit;
+    height: inherit;
+
+    position: relative;
+    @include center-flex-column;
+
+    &__percentage {
+        @include absolute-center;
+    }
+
+    &__subtitle {
+        position: absolute;
+
+        top: 55%;
+        color: var(--text-color-secondary);
+        text-align: center;
+        width: 65px;
+    }
+}

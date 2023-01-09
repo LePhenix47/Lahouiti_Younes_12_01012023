@@ -77,7 +77,7 @@
 }
 
 //Mixin to make the image take the set width and height without deforming it but without filling the entire container 
-//And also to remove any background in the image itself (⚠ Not in CSS!)
+//And also to remove any background in the image itself thanks to the 2nd property
 @mixin contain-image {
     object-fit: contain;
     mix-blend-mode: color-burn;

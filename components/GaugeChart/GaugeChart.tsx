@@ -11,28 +11,30 @@ import {
 } from "recharts";
 
 export default function GaugeChart({ data }: any) {
+  const percentageValue: number = data * 100;
+
   const formattedData: {
-    name: string;
-    value: any;
-  }[] = [{ name: "a", value: data }];
+    value: number;
+  }[] = [{ value: percentageValue }];
+
+  console.log(data);
 
   return (
-    <>
-      <p>gauge</p>
+    <div className="gauge-chart">
+      <h2 className="gauge-chart__percentage">{percentageValue + "%"}</h2>
+      <p className="gauge-chart__subtitle">de votre objectif</p>
       <RadialBarChart
         width={330}
         height={250}
-        innerRadius="60%"
+        innerRadius="70%"
         outerRadius="80%"
         data={formattedData}
-        startAngle={0}
-        endAngle={360}
+        startAngle={90}
+        endAngle={180 + formattedData[0].value}
+        fill="var(--bg-color-primary)"
+        stroke-linejoin="round"
       >
-        <RadialBar
-          label={{ fill: "blue", position: "insideStart" }}
-          background
-          dataKey="uv"
-        />
+        <RadialBar dataKey="value" />
         {/* <Legend
           iconSize={10}
           width={120}
@@ -43,6 +45,6 @@ export default function GaugeChart({ data }: any) {
         /> */}
         {/* <Tooltip /> */}
       </RadialBarChart>
-    </>
+    </div>
   );
 }

@@ -14,15 +14,16 @@ import {
 export default function LineChart({ data }: any) {
   console.log({ data });
 
-  const test = [{ name: "a", value: 12 }];
-
+  const formattedData: {
+    name: string;
+    value: any;
+  }[] = [{ name: "a", value: 12 }];
   return (
-    <>
-      <p>line</p>
+    <div className="line-chart">
       <LineChartJS
         width={250}
         height={250}
-        data={data}
+        data={formattedData}
         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
       >
         <CartesianGrid strokeDasharray="3 3" />
@@ -33,6 +34,6 @@ export default function LineChart({ data }: any) {
         <Line type="monotone" dataKey="pv" stroke="#8884d8" />
         <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
       </LineChartJS>
-    </>
+    </div>
   );
 }
