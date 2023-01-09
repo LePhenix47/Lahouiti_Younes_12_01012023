@@ -11,12 +11,14 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import FormatChartData from "../../services/formatChartData";
 
 export default function BarsChart({ data }: any) {
-  const formattedData: {
-    name: string;
-    value: any;
-  }[] = [{ name: "a", value: 12 }];
+  const chartDataFormatter = new FormatChartData();
+
+  const formattedData: { name: string; value: number }[] = [
+    { name: "a", value: 12 },
+  ];
 
   return (
     <div className="bars-chart">

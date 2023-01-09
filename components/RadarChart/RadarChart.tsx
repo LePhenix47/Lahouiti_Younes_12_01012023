@@ -11,14 +11,26 @@ import {
   Radar,
 } from "recharts";
 
+//Utils
+import FormatChartData from "../../services/formatChartData";
+
 export default function RadarChart({ data }: any) {
+  const chartDataFormatter = new FormatChartData();
+
+  console.log("formatter", chartDataFormatter.setRadarFormattedData(data));
+
+  const minValue: number = 0;
+
+  const maxValue: number = 200;
+
   const formattedData: {
-    // name: string;
-    value: any;
-  }[] = [{ value: 12 }];
+    subject: string;
+    key: number;
+    fullMark: number;
+  }[] = chartDataFormatter.setRadarFormattedData(data);
 
   return (
-    <div className="radar-chart">
+    <>
       <RadarChartJS
         outerRadius={90}
         width={250}
@@ -26,8 +38,8 @@ export default function RadarChart({ data }: any) {
         data={formattedData}
       >
         <PolarGrid />
-        <PolarAngleAxis dataKey="value" />
-        <PolarRadiusAxis angle={30} domain={[0, 150]} />
+        <PolarAngleAxis dataKey="subject" />
+        <PolarRadiusAxis angle={30} domain={[minValue, maxValue]} />
         <Radar
           name="Mike"
           dataKey="A"
@@ -42,8 +54,7 @@ export default function RadarChart({ data }: any) {
           fill="#82ca9d"
           fillOpacity={0.6}
         />
-        <Legend />
       </RadarChartJS>
-    </div>
+    </>
   );
 }

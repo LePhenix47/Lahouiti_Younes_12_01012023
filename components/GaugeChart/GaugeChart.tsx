@@ -1,17 +1,12 @@
 import React from "react";
 
 //Rechart.js
-import {
-  LineChart,
-  Line,
-  Legend,
-  RadialBar,
-  RadialBarChart,
-  Tooltip,
-} from "recharts";
+import { Legend, RadialBar, RadialBarChart, Tooltip } from "recharts";
 
 export default function GaugeChart({ data }: any) {
-  const percentageValue: number = data * 100 * 8;
+  const percentTester: number = 1;
+
+  const percentageValue: number = data * 100 * percentTester;
 
   const formattedData: {
     value: number;
@@ -40,15 +35,8 @@ export default function GaugeChart({ data }: any) {
           fill="var(--bg-color-primary)"
           cornerRadius={100}
         />
-        {/* <Legend
-          iconSize={10}
-          width={120}
-          height={140}
-          layout="vertical"
-          verticalAlign="middle"
-          align="right"
-        /> */}
-        {/* <Tooltip /> */}
+
+        <Tooltip />
       </RadialBarChart>
     </div>
   );

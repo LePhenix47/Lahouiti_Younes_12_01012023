@@ -47,7 +47,7 @@ export default function Chart({ chartType, chartData }: any): any {
     }
   }
 
-  // This useEffect will only run once, during the first render to avoid hydration issues
+  // This useEffect will only run once, during the first render to avoid UI hydration issues
   useEffect(() => {
     setInitialRenderComplete(true);
   }, []);

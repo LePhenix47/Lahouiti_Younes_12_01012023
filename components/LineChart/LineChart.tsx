@@ -10,14 +10,17 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import FormatChartData from "../../services/formatChartData";
 
 export default function LineChart({ data }: any) {
+  const chartDataFormatter = new FormatChartData();
   console.log({ data });
 
   const formattedData: {
     name: string;
     value: any;
   }[] = [{ name: "a", value: 12 }];
+
   return (
     <div className="line-chart">
       <LineChartJS
@@ -31,7 +34,7 @@ export default function LineChart({ data }: any) {
         <YAxis />
         {/* <Tooltip /> */}
         <Legend />
-        <Line type="monotone" dataKey="pv" stroke="#8884d8" />
+        <Line type="monotone" dataKey="name" stroke="#8884d8" />
         <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
       </LineChartJS>
     </div>
