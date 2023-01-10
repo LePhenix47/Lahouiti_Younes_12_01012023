@@ -38,13 +38,13 @@ export default function BarsChart({ data }: any) {
           dataKey="kg"
           fill="var(--bg-color-secondary)"
           radius={[10, 10, 0, 0]}
-          width={10}
+          barSize={10}
         />
         <Bar
           dataKey="Kcal"
           fill="var(--bg-color-primary)"
           radius={[10, 10, 0, 0]}
-          width={10}
+          barSize={10}
         />
       </BarChart>
     </div>

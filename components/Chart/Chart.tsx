@@ -58,7 +58,9 @@ export default function Chart({ chartType, chartData }: any): any {
 
   return (
     <section className={`chart chart__${chartType}`}>
-      <ResponsiveContainer>{renderChart}</ResponsiveContainer>
+      <ResponsiveContainer width="100%" height="100%">
+        {renderChart}
+      </ResponsiveContainer>
     </section>
   );
 }
