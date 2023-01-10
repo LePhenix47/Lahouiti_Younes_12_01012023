@@ -50,13 +50,13 @@ export default class FormatChartData {
   }
 
   //Returns a formatted array for the line and bars chart
-  setChartFormattedData(data: any): {
+  setLineFormattedData(data: any): {
     name: string;
-    value: any;
+    min: number;
   }[] {
     let dataValuesArray: {
       name: string;
-      value: any;
+      min: number;
     }[] = [];
 
     for (let i = 0; i < data.sessions.length; i++) {
@@ -64,8 +64,37 @@ export default class FormatChartData {
 
       const { day, sessionLength } = activity;
       dataValuesArray.push({
-        name: this.performanceLabels[day - 1],
-        value: sessionLength,
+        name: this.sessionsXAxis[day - 1],
+        min: sessionLength,
+      });
+    }
+
+    return dataValuesArray;
+  }
+
+  //Returns a formatted array for the line and bars chart
+  setBarsFormattedData(data: any): {
+    name: string;
+    kg: number;
+    Kcal: number;
+  }[] {
+    let dataValuesArray: {
+      name: string;
+      kg: number;
+      Kcal: number;
+    }[] = [];
+
+    for (let i = 0; i < data.sessions.length; i++) {
+      const sessions = data.sessions[i];
+
+      const { day, kilogram, calories } = sessions;
+
+      // const formattedDateDay = new Date(day).getDay();
+
+      dataValuesArray.push({
+        name: (i + 1).toString(),
+        kg: kilogram,
+        Kcal: calories,
       });
     }
 

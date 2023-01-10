@@ -16,10 +16,9 @@ export default function LineChart({ data }: any) {
   const chartDataFormatter = new FormatChartData();
   console.log({ data });
 
-  const formattedData: {
-    name: string;
-    value: any;
-  }[] = [{ name: "a", value: 12 }];
+  const formattedData = chartDataFormatter.setLineFormattedData(data);
+
+  console.log("LINE CHART:", { formattedData });
 
   return (
     <div className="line-chart">
@@ -29,13 +28,14 @@ export default function LineChart({ data }: any) {
         data={formattedData}
         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
-        <YAxis />
-        {/* <Tooltip /> */}
-        <Legend />
-        <Line type="monotone" dataKey="name" stroke="#8884d8" />
-        <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+        {/* <YAxis dataKey="value" /> */}
+        <Line
+          type="monotone"
+          dataKey="min"
+          stroke="var(--text-color-secondary)"
+        />
+        <Tooltip />
       </LineChartJS>
     </div>
   );

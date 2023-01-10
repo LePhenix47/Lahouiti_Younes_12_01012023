@@ -9,6 +9,7 @@ import {
   PolarGrid,
   PolarRadiusAxis,
   Radar,
+  Tooltip,
 } from "recharts";
 
 //Utils
@@ -41,19 +42,12 @@ export default function RadarChart({ data }: any) {
         <PolarAngleAxis dataKey="subject" />
         <PolarRadiusAxis angle={30} domain={[minValue, maxValue]} />
         <Radar
-          name="Mike"
-          dataKey="A"
-          stroke="#8884d8"
-          fill="#8884d8"
-          fillOpacity={0.6}
+          dataKey="key"
+          stroke="none"
+          fill="var(--bg-color-primary)"
+          fillOpacity={0.7}
         />
-        <Radar
-          name="Lily"
-          dataKey="B"
-          stroke="#82ca9d"
-          fill="#82ca9d"
-          fillOpacity={0.6}
-        />
+        <Tooltip />
       </RadarChartJS>
     </>
   );

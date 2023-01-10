@@ -77,11 +77,13 @@
     &__line {
         height: 265px;
         min-width: 300px;
+        background-color: var(--bg-color-primary);
     }
 
     &__radar {
         height: 265px;
         min-width: 300px;
+        background-color: var(--bg-color-secondary);
     }
 
     &__gauge {
@@ -198,11 +200,29 @@
 
 // }
 
-.bars-chart {}
+.bars-chart {
+    width: inherit;
+    height: inherit;
 
-.line-chart {}
+    position: relative;
+    @include center-flex-column;
+}
 
-.radar-chart {}
+.line-chart {
+    width: inherit;
+    height: inherit;
+
+    position: relative;
+    @include center-flex-column;
+}
+
+.radar-chart {
+    width: inherit;
+    height: inherit;
+
+    position: relative;
+    @include center-flex-column;
+}
 
 
 .gauge-chart {
