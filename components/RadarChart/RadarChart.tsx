@@ -31,7 +31,7 @@ export default function RadarChart({ data }: any) {
   }[] = chartDataFormatter.setRadarFormattedData(data);
 
   return (
-    <>
+    <div className="radar-chart">
       <RadarChartJS
         outerRadius={90}
         width={250}
@@ -49,6 +49,6 @@ export default function RadarChart({ data }: any) {
         />
         <Tooltip />
       </RadarChartJS>
-    </>
+    </div>
   );
 }

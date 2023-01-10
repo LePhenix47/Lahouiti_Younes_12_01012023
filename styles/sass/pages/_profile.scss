@@ -205,7 +205,66 @@
     height: inherit;
 
     position: relative;
-    @include center-flex-column;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__paragraph {
+        margin-left: 5px;
+        font-weight: 500;
+        font-size: 16px;
+        flex: 1;
+    }
+
+    &__legend-list {
+        display: flex;
+        flex: 1;
+        gap: 60px;
+    }
+
+    &__legend-item {
+        position: relative;
+        color: var(--text-color-secondary);
+
+        &--dark-grey-dot {
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: -20px;
+                bottom: 5px;
+
+                aspect-ratio: 1/1;
+                height: 10px;
+
+                background-color: var(--bg-color-secondary);
+
+                border-radius: 50%;
+            }
+
+        }
+
+        &--red-dot {
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: -20px;
+                bottom: 5px;
+
+                aspect-ratio: 1/1;
+                height: 10px;
+
+                background-color: var(--bg-color-primary);
+
+                border-radius: 50%;
+            }
+        }
+
+    }
+
 }
 
 .line-chart {
@@ -214,6 +273,11 @@
 
     position: relative;
     @include center-flex-column;
+
+    &::before {
+        content: "Durée moyenne des sessions";
+        color: var(--text-color-quaternary);
+    }
 }
 
 .radar-chart {
@@ -222,6 +286,10 @@
 
     position: relative;
     @include center-flex-column;
+
+    &::before {
+        content: "";
+    }
 }
 
 

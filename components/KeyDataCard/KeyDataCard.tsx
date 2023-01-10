@@ -26,7 +26,7 @@ export default function KeyDataCard({ dataType, keyCardData }: any) {
   const typeValue = `${keyCardData?.[dataType]}${unit}`;
 
   return (
-    <div className="key-data-card">
+    <section className="key-data-card">
       <div
         className={`key-data-card__image-container key-data-card__image-container--${formattedClass}`}
       >
@@ -42,6 +42,6 @@ export default function KeyDataCard({ dataType, keyCardData }: any) {
         <h2 className="key-data-card__count">{typeValue}</h2>
         <p className="key-data-card__count-type">{nameOfType + "s"}</p>
       </div>
-    </div>
+    </section>
   );
 }

@@ -29,11 +29,13 @@ export default function LineChart({ data }: any) {
         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
       >
         <XAxis dataKey="name" />
-        {/* <YAxis dataKey="value" /> */}
+        {/* <YAxis dataKey="min" /> */}
         <Line
           type="monotone"
+          name="min"
           dataKey="min"
-          stroke="var(--text-color-secondary)"
+          stroke="var(--text-color-quaternary)"
+          stroke-width="15"
         />
         <Tooltip />
       </LineChartJS>

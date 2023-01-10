@@ -30,6 +30,7 @@ export default function GaugeChart({ data }: any) {
         endAngle={startAngleDegrees + (percentageValue * 360) / 100}
       >
         <RadialBar
+          name="score"
           dataKey="value"
           stroke-linejoin="round"
           fill="var(--bg-color-primary)"
