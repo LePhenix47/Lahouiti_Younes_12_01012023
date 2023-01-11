@@ -35,7 +35,8 @@
         display: flex;
 
         @include mobile-only {
-            flex-direction: column;
+            text-align: center;
+            @include grid(2, 2, auto)
         }
 
         justify-content: space-evenly;
