@@ -21,7 +21,7 @@ export default function GaugeChart({ data }: any) {
       <h2 className="gauge-chart__percentage">{percentageValue + "%"}</h2>
       <p className="gauge-chart__subtitle">de votre objectif</p>
       <RadialBarChart
-        width={330}
+        width={300}
         height={250}
         innerRadius="65%"
         outerRadius="80%"
@@ -36,8 +36,6 @@ export default function GaugeChart({ data }: any) {
           fill="var(--bg-color-primary)"
           cornerRadius={100}
         />
-
-        <Tooltip />
       </RadialBarChart>
     </div>
   );

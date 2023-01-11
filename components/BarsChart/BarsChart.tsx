@@ -16,7 +16,6 @@ import {
 import FormatChartData from "../../services/formatChartData";
 
 //Components
-import CustomChartLegend from "../CustomChartLegend/CustomChartLegend";
 
 export default function BarsChart({ data }: any) {
   const chartDataFormatter = new FormatChartData();
@@ -51,10 +50,14 @@ export default function BarsChart({ data }: any) {
         </ul>
       </div>
       <BarChart width={960} height={250} data={formattedData}>
-        <CartesianGrid strokeDasharray="3 3" />
+        <CartesianGrid
+          strokeDasharray="3 3"
+          horizontal={true}
+          vertical={false}
+        />
         <XAxis dataKey="name" tickLine={false} axisLine={false} />
         <YAxis orientation="right" />
-        <Tooltip />
+        <Tooltip animationEasing="ease-out" />
 
         {/* <Legend verticalAlign="top" iconType="circle" /> */}
 

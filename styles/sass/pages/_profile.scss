@@ -30,6 +30,16 @@
             flex-direction: column;
             gap: 100px;
         }
+
+        @include tablet-only {
+            flex-direction: column;
+            gap: 100px;
+        }
+
+        @include mobile-only {
+            flex-direction: column;
+            gap: 100px;
+        }
     }
 
 
@@ -39,19 +49,38 @@
         @include laptop-only {
             @include center-flex-column(50px)
         }
+
+        @include tablet-only {
+            @include center-flex-column(50px)
+        }
+    }
+
+    @include mobile-only {
+        @include center-flex-column(50px)
     }
 
     &__key-data {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 28px;
 
         @include laptop-only {
             gap: 35px;
         }
+
+        @include tablet-only {
+            gap: 35px;
+        }
+
+        @include mobile-only {
+            gap: 35px;
+        }
     }
 }
+
+
+
 
 
 .chart {
@@ -67,6 +96,14 @@
         grid-column-end: span 3;
 
         @include laptop-only {
+            height: 265px;
+        }
+
+        @include tablet-only {
+            height: 265px;
+        }
+
+        @include mobile-only {
             height: 265px;
         }
 
@@ -109,6 +146,14 @@
     width: 280px;
 
     @include laptop-only {
+        width: 100%;
+    }
+
+    @include tablet-only {
+        width: 100%;
+    }
+
+    @include mobile-only {
         width: 100%;
     }
 
@@ -163,6 +208,16 @@
             margin: auto;
         }
 
+        @include tablet-only {
+            text-align: center;
+            margin: auto;
+        }
+
+        @include mobile-only {
+            text-align: center;
+            margin: auto;
+        }
+
         gap: 5px;
 
         overflow: hidden;
@@ -209,6 +264,7 @@
     &__container {
         display: flex;
         justify-content: space-between;
+        padding: 10px 10px;
     }
 
     &__paragraph {
@@ -265,6 +321,20 @@
 
     }
 
+
+    & :has(.recharts-tooltip, .recharts-tooltip-item-name) {
+        color: var(--text-color-quaternary) !important;
+    }
+
+    & .recharts-default-tooltip {
+        background-color: var(--bg-color-primary) !important;
+    }
+
+    & .recharts-rectangle.recharts-tooltip-cursor {
+        fill: var(--bg-color-secondary);
+        opacity: 20%;
+    }
+
 }
 
 .line-chart {
@@ -276,8 +346,34 @@
 
     &::before {
         content: "Durée moyenne des sessions";
+
+        position: absolute;
+        top: 25px;
+        left: 30px;
+
+        max-width: 150px;
+
+        @include laptop-only {
+            max-width: none;
+        }
+
         color: var(--text-color-quaternary);
+
+        opacity: 70%;
     }
+
+
+    & :has(.recharts-tooltip, .recharts-tooltip-item-name) {
+        color: var(--text-color-quaternary) !important;
+    }
+
+    & .recharts-default-tooltip {
+        background-color: var(--bg-color-secondary) !important;
+
+
+    }
+
+
 }
 
 .radar-chart {
@@ -290,6 +386,17 @@
     &::before {
         content: "";
     }
+
+    & :has(.recharts-tooltip, .recharts-tooltip-item-name) {
+        color: var(--text-color-primary) !important;
+    }
+
+    & .recharts-default-tooltip {
+        background-color: var(--bg-color-tertiary) !important;
+
+
+    }
+
 }
 
 

@@ -28,12 +28,12 @@ export default class FormatChartData {
   //Returns a formatted array for the radar chart
   setRadarFormattedData(data: any): {
     subject: string;
-    key: number;
+    grade: number;
     fullMark: number;
   }[] {
     let dataValuesArray: {
       subject: string;
-      key: number;
+      grade: number;
       fullMark: number;
     }[] = [];
 
@@ -41,7 +41,7 @@ export default class FormatChartData {
       const performance = data.data[i];
       dataValuesArray.push({
         subject: this.performanceLabels[i],
-        key: performance.value,
+        grade: performance.value,
         fullMark: 200,
       });
     }

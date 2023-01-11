@@ -26,7 +26,7 @@ export default function RadarChart({ data }: any) {
 
   const formattedData: {
     subject: string;
-    key: number;
+    grade: number;
     fullMark: number;
   }[] = chartDataFormatter.setRadarFormattedData(data);
 
@@ -38,16 +38,15 @@ export default function RadarChart({ data }: any) {
         height={250}
         data={formattedData}
       >
-        <PolarGrid />
+        <PolarGrid stroke="var(--body-bg-color)" />
         <PolarAngleAxis dataKey="subject" />
         <PolarRadiusAxis angle={30} domain={[minValue, maxValue]} />
         <Radar
-          dataKey="key"
-          stroke="none"
+          dataKey="grade"
           fill="var(--bg-color-primary)"
           fillOpacity={0.7}
         />
-        <Tooltip />
+        <Tooltip animationEasing="ease-out" />
       </RadarChartJS>
     </div>
   );
