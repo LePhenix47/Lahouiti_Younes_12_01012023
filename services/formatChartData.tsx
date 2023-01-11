@@ -42,7 +42,7 @@ export default class FormatChartData {
       dataValuesArray.push({
         subject: this.performanceLabels[i],
         grade: performance.value,
-        fullMark: 200,
+        fullMark: 250,
       });
     }
 

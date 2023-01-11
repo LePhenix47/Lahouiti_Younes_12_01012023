@@ -95,7 +95,7 @@ export function getObjectProperties(object: object): any[] {
   return [];
 }
 
-//Retunrs a string of the number inputted with a '%' in the end
+//Returns a string with a '%' in the end of the number inputted
 export function toPercent(number: number, option?: any): string {
   return number.toLocaleString(undefined, {
     style: "percent",

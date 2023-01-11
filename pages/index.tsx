@@ -61,7 +61,9 @@ export default function Home() {
 
     const keyData: any = generalInfoData.data?.data?.keyData;
 
-    const gaugeData: any = generalInfoData.data?.data?.todayScore;
+    const gaugeData: any = generalInfoData.data?.data?.todayScore
+      ? generalInfoData.data?.data?.todayScore
+      : generalInfoData.data?.data?.score;
 
     const barsData: any = activityInfoData.data?.data;
 

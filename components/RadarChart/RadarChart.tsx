@@ -46,8 +46,36 @@ export default function RadarChart({ data }: any) {
           fill="var(--bg-color-primary)"
           fillOpacity={0.7}
         />
-        <Tooltip animationEasing="ease-out" />
+        <Tooltip
+          animationEasing="ease-out"
+          content={<RadarCustomTooltip payload={formattedData} />}
+          offset={50}
+          wrapperStyle={{ outline: "none" }}
+        />
       </RadarChartJS>
+    </div>
+  );
+}
+
+function RadarCustomTooltip(active: any) {
+  const value = active.payload;
+  console.log({ value });
+
+  let subjectData = null;
+  let gradeData = null;
+
+  for (let payloadValue of active.payload) {
+    subjectData = payloadValue.payload.subject;
+    gradeData = payloadValue.payload.grade;
+  }
+  return (
+    <div className="tool-tip__radar-chart">
+      <p className="tool-tip__radar-chart-text">
+        {`Type de performance: ${subjectData}`}
+      </p>
+      <p className="tool-tip__radar-chart-text">
+        {`Degré de performance: ${gradeData}/250`}
+      </p>
     </div>
   );
 }

@@ -36,8 +36,29 @@ export default function LineChart({ data }: any) {
           stroke="var(--text-color-quaternary)"
           stroke-width="15"
         />
-        <Tooltip animationEasing="ease-out" />
+        <Tooltip
+          animationEasing="ease-out"
+          content={<LineCustomTooltip payload={formattedData} />}
+          wrapperStyle={{ outline: "none" }}
+        />
       </LineChartJS>
+    </div>
+  );
+}
+
+function LineCustomTooltip(active: any) {
+  const value = active.payload;
+  console.log({ value });
+
+  let activityData = null;
+
+  for (let payloadValue of active.payload) {
+    activityData = payloadValue.payload.min;
+  }
+
+  return (
+    <div className="tool-tip__line-chart">
+      <p className="tool-tip__line-chart-text"> {`${activityData} min`}</p>
     </div>
   );
 }

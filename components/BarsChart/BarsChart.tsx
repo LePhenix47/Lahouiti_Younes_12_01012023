@@ -55,7 +55,12 @@ export default function BarsChart({ data }: any) {
         />
         <XAxis dataKey="name" tickLine={false} axisLine={false} />
         <YAxis orientation="right" />
-        <Tooltip animationEasing="ease-out" />
+        <Tooltip
+          animationEasing="ease-out"
+          content={<BarsCustomTooltip payload={formattedData} />}
+          offset={40}
+          wrapperStyle={{ outline: "none" }}
+        />
 
         <Bar
           dataKey="kg"
@@ -70,6 +75,29 @@ export default function BarsChart({ data }: any) {
           barSize={10}
         />
       </BarChart>
+    </div>
+  );
+}
+
+function BarsCustomTooltip(active: any): any {
+  let kilogramData = null;
+  let caloriesData = null;
+
+  for (let payloadValue of active.payload) {
+    kilogramData = payloadValue.payload.kg;
+    caloriesData = payloadValue.payload.Kcal;
+  }
+
+  const payloadIsEmpty: boolean = !active.payload.length;
+
+  if (payloadIsEmpty) {
+    return;
+  }
+
+  return (
+    <div className="tool-tip__bar-chart">
+      <p className="tool-tip__bar-chart-text"> {`${kilogramData}kg`}</p>
+      <p className="tool-tip__bar-chart-text"> {`${caloriesData}Kcal`}</p>
     </div>
   );
 }
