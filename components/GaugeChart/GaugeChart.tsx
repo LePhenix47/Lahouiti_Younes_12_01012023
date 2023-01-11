@@ -19,8 +19,6 @@ export default function GaugeChart({ data }: any) {
 
   const startAngleDegrees: number = 90;
 
-  console.log(data);
-
   return (
     <div className="gauge-chart">
       <h2 className="gauge-chart__percentage">{stringPercentage}</h2>
@@ -41,8 +39,6 @@ export default function GaugeChart({ data }: any) {
           fill="var(--bg-color-primary)"
           cornerRadius={100}
         />
-
-        <Tooltip />
       </RadialBarChart>
     </div>
   );

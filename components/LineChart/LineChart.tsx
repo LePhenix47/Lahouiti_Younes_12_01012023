@@ -14,11 +14,9 @@ import FormatChartData from "../../services/formatChartData";
 
 export default function LineChart({ data }: any) {
   const chartDataFormatter = new FormatChartData();
-  console.log({ data });
+  // console.log({ data });
 
   const formattedData = chartDataFormatter.setLineFormattedData(data);
-
-  console.log("LINE CHART:", { formattedData });
 
   return (
     <div className="line-chart">

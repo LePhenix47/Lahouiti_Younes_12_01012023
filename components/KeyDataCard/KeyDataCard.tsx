@@ -23,9 +23,11 @@ export default function KeyDataCard({ dataType, keyCardData }: any) {
   let nameOfType = splitString(formattedClass, "-")[0];
   nameOfType = formatText(nameOfType, "titlecase");
 
-  //The type value contains the value with its unit
+  //We get the value and we format the number depending on the user's locale
   const value = keyCardData?.[dataType];
   const formattedValue = numberSeparatorLocale(value);
+
+  //The type value contains the value with its unit
   const typeValue = `${formattedValue}${unit}`;
 
   return (

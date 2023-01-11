@@ -33,8 +33,6 @@ export default function BarsChart({ data }: any) {
 
   const formattedData = chartDataFormatter.setBarsFormattedData(data);
 
-  console.log("BARS CHART", { formattedData });
-
   return (
     <div className="bars-chart">
       <div className="bars-chart__container">

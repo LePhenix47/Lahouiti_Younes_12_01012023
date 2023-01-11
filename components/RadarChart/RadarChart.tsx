@@ -16,9 +16,9 @@ import {
 import FormatChartData from "../../services/formatChartData";
 
 export default function RadarChart({ data }: any) {
-  const chartDataFormatter = new FormatChartData();
+  console.log({ data });
 
-  console.log("formatter", chartDataFormatter.setRadarFormattedData(data));
+  const chartDataFormatter = new FormatChartData();
 
   const minValue: number = 0;
 

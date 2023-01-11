@@ -21,8 +21,9 @@ export default function Chart({ chartType, chartData }: any): any {
   // const chartIsBarChart = chartType.includes("bar");
   const [initialRenderComplete, setInitialRenderComplete] = useState(false);
 
-  console.log({ chartType, chartData });
+  // console.log({ chartType, chartData });
 
+  //Variable containing the actual chart
   let renderChart: any = null;
 
   switch (chartType) {

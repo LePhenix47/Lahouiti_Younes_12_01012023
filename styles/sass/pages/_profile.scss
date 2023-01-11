@@ -27,17 +27,17 @@
         margin-top: 50px;
 
         @include laptop-only {
-            flex-direction: column;
+            flex-direction: column-reverse;
             gap: 100px;
         }
 
         @include tablet-only {
-            flex-direction: column;
+            flex-direction: column-reverse;
             gap: 100px;
         }
 
         @include mobile-only {
-            flex-direction: column;
+            flex-direction: column-reverse;
             gap: 100px;
         }
     }
@@ -96,20 +96,21 @@
     &__bar {
         grid-column-end: span 3;
 
+        max-height: 355px;
+        min-width: 800px;
+
         @include laptop-only {
-            height: 265px;
+            height: 335px;
         }
 
         @include tablet-only {
-            height: 265px;
+            height: 335px;
         }
 
         @include mobile-only {
-            height: 265px;
+            height: 335px;
         }
 
-        max-height: 355px;
-        min-width: 800px;
     }
 
     &__line {
