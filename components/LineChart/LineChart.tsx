@@ -30,7 +30,12 @@ export default function LineChart({ data }: any) {
           data={formattedData}
           margin={{ top: 5, right: 30, left: 30, bottom: 5 }}
         >
-          <XAxis dataKey="name" />
+          <XAxis
+            dataKey="name"
+            axisLine={false}
+            tickLine={false}
+            fill="white"
+          />
           <YAxis dataKey="min" hide />
 
           <Line
@@ -38,7 +43,8 @@ export default function LineChart({ data }: any) {
             name="min"
             dataKey="min"
             stroke="var(--text-color-quaternary)"
-            stroke-width="15"
+            strokeWidth={2}
+            dot={false}
           />
           <Tooltip
             animationEasing="ease-out"

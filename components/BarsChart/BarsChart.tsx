@@ -48,7 +48,7 @@ export default function BarsChart({ data }: any) {
           </li>
         </ul>
       </div>
-      <ResponsiveContainer>
+      <ResponsiveContainer className="responsive-container">
         <BarChart width={960} height={250} data={formattedData}>
           <CartesianGrid
             strokeDasharray="3 3"
@@ -78,6 +78,34 @@ export default function BarsChart({ data }: any) {
           />
         </BarChart>
       </ResponsiveContainer>
+      <BarChart width={960} height={250} data={formattedData}>
+        <CartesianGrid
+          strokeDasharray="3 3"
+          horizontal={true}
+          vertical={false}
+        />
+        <XAxis dataKey="name" tickLine={false} axisLine={false} />
+        <YAxis orientation="right" />
+        <Tooltip
+          // animationEasing="ease-out"
+          content={<BarsCustomTooltip payload={formattedData} />}
+          offset={40}
+          wrapperStyle={{ outline: "none" }}
+        />
+
+        <Bar
+          dataKey="kg"
+          fill="var(--bg-color-secondary)"
+          radius={[10, 10, 0, 0]}
+          barSize={10}
+        />
+        <Bar
+          dataKey="Kcal"
+          fill="var(--bg-color-primary)"
+          radius={[10, 10, 0, 0]}
+          barSize={10}
+        />
+      </BarChart>
     </div>
   );
 }

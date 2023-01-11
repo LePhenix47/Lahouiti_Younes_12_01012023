@@ -457,3 +457,19 @@
         }
     }
 }
+
+
+.responsive-container {
+    @include laptop-only {
+        display: none;
+    }
+
+
+    @include tablet-only {
+        display: none;
+    }
+
+    @include mobile-only {
+        display: none;
+    }
+}
