@@ -3,6 +3,7 @@
 .error-404 {
     @include center-flex-column(50px);
     width: 100%;
+    min-height: 80vh;
 
     text-align: center;
 

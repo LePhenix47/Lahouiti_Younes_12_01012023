@@ -14,6 +14,16 @@
 
     &__greeting-sentence {
         margin-bottom: 45px;
+
+        @include mobile-only {
+            font-size: 42px;
+        }
+    }
+
+    &__recap-sentence {
+        @include mobile-only {
+            font-size: 14px;
+        }
     }
 
     &__name {
@@ -81,7 +91,13 @@
 }
 
 
+.content-wrapper {
+    display: flex;
 
+    @include mobile-only {
+        flex-direction: column-reverse;
+    }
+}
 
 
 .chart {
@@ -93,11 +109,11 @@
     overflow: hidden;
 
 
+
     &__bar {
         grid-column-end: span 3;
 
         max-height: 355px;
-        min-width: 800px;
 
         @include laptop-only {
             height: 335px;
@@ -147,6 +163,17 @@
 
     width: 280px;
 
+    min-width: 250px;
+
+    height: 125px;
+
+    padding: 0 20px;
+
+    background-color: var(--bg-color-tertiary);
+    border-radius: 5px;
+
+
+
     @include laptop-only {
         width: 100%;
     }
@@ -158,17 +185,6 @@
     @include mobile-only {
         width: 100%;
     }
-
-    min-width: 250px;
-
-    height: 125px;
-
-    padding: 0 20px;
-
-    background-color: var(--bg-color-tertiary);
-    border-radius: 5px;
-
-
 
     &__image-container {
 
@@ -227,11 +243,19 @@
 
     &__count {
         @include text-ellipsis-effect;
+
+        @include mobile-only {
+            font-size: 22px;
+        }
     }
 
     &__count-type {
         color: var(--text-color-secondary);
         @include text-ellipsis-effect;
+
+        @include mobile-only {
+            font-size: 18px;
+        }
     }
 }
 
@@ -241,6 +265,21 @@
     height: inherit;
 
     position: relative;
+
+    @include laptop-only {
+        padding-bottom: 30px;
+
+    }
+
+    @include tablet-only {
+        padding-bottom: 60px;
+
+    }
+
+    @include mobile-only {
+        padding-bottom: 60px;
+
+    }
 
     &__container {
         display: flex;

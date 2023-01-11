@@ -9,7 +9,10 @@ import {
   Tooltip,
   XAxis,
   YAxis,
+  ResponsiveContainer,
 } from "recharts";
+
+//Services
 import FormatChartData from "../../services/formatChartData";
 
 export default function LineChart({ data }: any) {
@@ -20,28 +23,30 @@ export default function LineChart({ data }: any) {
 
   return (
     <div className="line-chart">
-      <LineChartJS
-        width={250}
-        height={250}
-        data={formattedData}
-        margin={{ top: 5, right: 30, left: 30, bottom: 5 }}
-      >
-        <XAxis dataKey="name" />
-        <YAxis dataKey="min" hide />
+      <ResponsiveContainer>
+        <LineChartJS
+          width={250}
+          height={250}
+          data={formattedData}
+          margin={{ top: 5, right: 30, left: 30, bottom: 5 }}
+        >
+          <XAxis dataKey="name" />
+          <YAxis dataKey="min" hide />
 
-        <Line
-          type="monotone"
-          name="min"
-          dataKey="min"
-          stroke="var(--text-color-quaternary)"
-          stroke-width="15"
-        />
-        <Tooltip
-          animationEasing="ease-out"
-          content={<LineCustomTooltip payload={formattedData} />}
-          wrapperStyle={{ outline: "none" }}
-        />
-      </LineChartJS>
+          <Line
+            type="monotone"
+            name="min"
+            dataKey="min"
+            stroke="var(--text-color-quaternary)"
+            stroke-width="15"
+          />
+          <Tooltip
+            animationEasing="ease-out"
+            content={<LineCustomTooltip payload={formattedData} />}
+            wrapperStyle={{ outline: "none" }}
+          />
+        </LineChartJS>
+      </ResponsiveContainer>
     </div>
   );
 }

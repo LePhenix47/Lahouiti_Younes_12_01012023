@@ -3,6 +3,7 @@
 .work-in-progress {
     @include center-flex-column;
     width: 100%;
+    min-height: 80vh;
 
     &__title {
         @include center-flex;
