@@ -38,6 +38,7 @@ export default function GaugeChart({ data }: any) {
           stroke-linejoin="round"
           fill="var(--bg-color-primary)"
           cornerRadius={100}
+          background={{ fill: "red" }}
         />
       </RadialBarChart>
     </div>

@@ -15,7 +15,7 @@ import SpinLoader from "../components/SpinLoader/SpinLoader";
 
 export default function Home() {
   //We recover the userId through the URL parameters
-  let userId = 18;
+  let userId = 12;
 
   /*
     // App service

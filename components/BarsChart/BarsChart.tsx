@@ -52,7 +52,7 @@ export default function BarsChart({ data }: any) {
             vertical={false}
           />
           <XAxis dataKey="name" tickLine={false} axisLine={false} />
-          <YAxis orientation="right" />
+          <YAxis orientation="right" tickLine={false} axisLine={false} />
           <Tooltip
             // animationEasing="ease-out"
             content={<BarsCustomTooltip payload={formattedData} />}

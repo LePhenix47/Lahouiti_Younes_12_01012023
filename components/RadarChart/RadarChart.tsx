@@ -49,7 +49,7 @@ export default function RadarChart({ data }: any) {
           <Tooltip
             animationEasing="ease-out"
             content={<RadarCustomTooltip payload={formattedData} />}
-            offset={50}
+            offset={55}
             wrapperStyle={{ outline: "none" }}
           />
         </RadarChartJS>
