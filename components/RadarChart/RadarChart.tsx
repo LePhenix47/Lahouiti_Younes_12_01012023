@@ -40,7 +40,11 @@ export default function RadarChart({ data }: any) {
         >
           <PolarGrid stroke="var(--body-bg-color)" />
           <PolarAngleAxis dataKey="subject" />
-          <PolarRadiusAxis angle={30} domain={[minValue, maxValue]} />
+          <PolarRadiusAxis
+            angle={30}
+            domain={[minValue, maxValue]}
+            stroke="var(--body-bg-color)"
+          />
           <Radar
             dataKey="grade"
             fill="var(--bg-color-primary)"

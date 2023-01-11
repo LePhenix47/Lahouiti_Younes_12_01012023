@@ -15,6 +15,8 @@
     $bg-color-secondary: #cfd4d7;
     $bg-color-tertiary: #0b0b0b;
 
+    $radar-line-stroke-color: rgb(51, 51, 51);
+
     $text-color-primary: white;
     $text-color-secondary: #646879;
     $text-color-tertiary: red; //Unchanged
@@ -39,6 +41,7 @@
         --bg-color-secondary: #{$bg-color-secondary};
         --bg-color-tertiary: #{$bg-color-tertiary};
 
+        --radar-line-stroke-color: #{$radar-line-stroke-color};
 
         --text-color-primary: #{$text-color-primary};
         --text-color-secondary: #{$text-color-secondary};

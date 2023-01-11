@@ -384,7 +384,7 @@
 
         color: var(--text-color-quaternary);
 
-        opacity: 50%;
+        opacity: 70%;
     }
 
 
@@ -399,6 +399,10 @@
 
     &::before {
         content: "";
+    }
+
+    .recharts-curve.recharts-tooltip-cursor {
+        stroke: var(--radar-line-stroke-color);
     }
 
 

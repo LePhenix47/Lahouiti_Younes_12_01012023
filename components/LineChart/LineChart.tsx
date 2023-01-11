@@ -57,7 +57,7 @@ export default function LineChart({ data }: any) {
 
         <AreaChart
           data={formattedData}
-          margin={{ top: 50, right: 30, left: 30, bottom: 5 }}
+          margin={{ top: 60, right: 30, left: 30, bottom: 5 }}
         >
           <defs>
             <linearGradient id="colorMin" x1="0" y1="0" x2="0" y2="1">
