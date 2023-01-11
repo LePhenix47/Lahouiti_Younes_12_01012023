@@ -25,8 +25,6 @@ export default function LineChart({ data }: any) {
     <div className="line-chart">
       <ResponsiveContainer>
         <LineChartJS
-          width={250}
-          height={250}
           data={formattedData}
           margin={{ top: 5, right: 30, left: 30, bottom: 5 }}
         >
@@ -34,7 +32,7 @@ export default function LineChart({ data }: any) {
             dataKey="name"
             axisLine={false}
             tickLine={false}
-            fill="white"
+            stroke="var(--text-color-quaternary)"
           />
           <YAxis dataKey="min" hide />
 
@@ -58,9 +56,6 @@ export default function LineChart({ data }: any) {
 }
 
 function LineCustomTooltip(active: any) {
-  const value = active.payload;
-  console.log({ value });
-
   let activityData = null;
 
   for (let payloadValue of active.payload) {

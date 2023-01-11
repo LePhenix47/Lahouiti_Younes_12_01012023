@@ -1,4 +1,3 @@
-import React from "react";
 //Rechart.js
 import {
   LineChart,
@@ -21,17 +20,6 @@ import FormatChartData from "../../services/formatChartData";
 export default function BarsChart({ data }: any) {
   const chartDataFormatter = new FormatChartData();
 
-  // const formattedData: {
-  //   name: string;
-  //   value1: number;
-  //   value2: number;
-  // }[] = [{ name: "L", value1: 12, value2: 9 }];
-
-  // const legendPayload = [
-  //   { value: "Poids (kg)", type: "round", id: "ID01" },
-  //   { value: "Calories (Kcal)", type: "round", id: "ID02" },
-  // ];
-
   const formattedData = chartDataFormatter.setBarsFormattedData(data);
 
   return (
@@ -48,10 +36,18 @@ export default function BarsChart({ data }: any) {
           </li>
         </ul>
       </div>
-      <ResponsiveContainer className="responsive-container">
-        <BarChart width={960} height={250} data={formattedData}>
+      <ResponsiveContainer>
+        <BarChart
+          data={formattedData}
+          margin={{
+            top: 45,
+            right: 45,
+            left: 65,
+            bottom: 85,
+          }}
+        >
           <CartesianGrid
-            strokeDasharray="3 3"
+            strokeDasharray="2 2"
             horizontal={true}
             vertical={false}
           />
@@ -78,34 +74,6 @@ export default function BarsChart({ data }: any) {
           />
         </BarChart>
       </ResponsiveContainer>
-      <BarChart width={960} height={250} data={formattedData}>
-        <CartesianGrid
-          strokeDasharray="3 3"
-          horizontal={true}
-          vertical={false}
-        />
-        <XAxis dataKey="name" tickLine={false} axisLine={false} />
-        <YAxis orientation="right" />
-        <Tooltip
-          // animationEasing="ease-out"
-          content={<BarsCustomTooltip payload={formattedData} />}
-          offset={40}
-          wrapperStyle={{ outline: "none" }}
-        />
-
-        <Bar
-          dataKey="kg"
-          fill="var(--bg-color-secondary)"
-          radius={[10, 10, 0, 0]}
-          barSize={10}
-        />
-        <Bar
-          dataKey="Kcal"
-          fill="var(--bg-color-primary)"
-          radius={[10, 10, 0, 0]}
-          barSize={10}
-        />
-      </BarChart>
     </div>
   );
 }

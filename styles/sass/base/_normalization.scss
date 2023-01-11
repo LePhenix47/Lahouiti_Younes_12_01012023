@@ -22,6 +22,11 @@
     padding: 0;
 }
 
+*::selection {
+    background-color: var(--bg-color-primary);
+    color: var(--text-color-quaternary)
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 50%;

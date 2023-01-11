@@ -17,13 +17,11 @@ import {
 import FormatChartData from "../../services/formatChartData";
 
 export default function RadarChart({ data }: any) {
-  console.log({ data });
-
   const chartDataFormatter = new FormatChartData();
 
   const minValue: number = 0;
 
-  const maxValue: number = 200;
+  const maxValue: number = 250;
 
   const formattedData: {
     subject: string;
@@ -61,9 +59,6 @@ export default function RadarChart({ data }: any) {
 }
 
 function RadarCustomTooltip(active: any) {
-  const value = active.payload;
-  console.log({ value });
-
   let subjectData = null;
   let gradeData = null;
 
@@ -77,7 +72,7 @@ function RadarCustomTooltip(active: any) {
         {`Type de performance: ${subjectData}`}
       </p>
       <p className="tool-tip__radar-chart-text">
-        {`Degré de performance: ${gradeData}`}
+        {`Degré de performance: ${gradeData}/250`}
       </p>
     </div>
   );
