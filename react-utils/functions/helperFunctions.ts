@@ -94,3 +94,23 @@ export function getObjectProperties(object: object): any[] {
   }
   return [];
 }
+
+//Retunrs a string of the number inputted with a '%' in the end
+export function toPercent(number: number): string {
+  return number.toLocaleString(undefined, {
+    style: "percent",
+    minimumFractionDigits: 0,
+  });
+}
+
+//Formats a number by separating every thousand with a format from the user's locale
+//example:
+//The user lives in Italy and we have: const number = 1_930 →returns "1.930"
+//If they lived in India and we have: const number = 1_930 →returns "1,930"
+export function numberSeparatorLocale(number: number): string {
+  const formatter = new Intl.NumberFormat(undefined, {
+    maximumSignificantDigits: 3,
+  });
+
+  return formatter.format(number);
+}

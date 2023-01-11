@@ -13,22 +13,22 @@ export default function NavSidebar() {
       <nav className="side-bar__nav">
         <ul className="side-bar__unordered-list">
           <li className="side-bar__list-item">
-            <Link href="#gauge" className="side-bar__link">
+            <Link href="#gauge" className="side-bar__link" scroll={false}>
               <SidebarIcon iconType="yoga" />
             </Link>
           </li>
           <li className="side-bar__list-item">
-            <Link href="#radar" className="side-bar__link">
+            <Link href="#radar" className="side-bar__link" scroll={false}>
               <SidebarIcon iconType="swimming" />
             </Link>
           </li>
           <li className="side-bar__list-item">
-            <Link href="#bar" className="side-bar__link">
+            <Link href="#bar" className="side-bar__link" scroll={false}>
               <SidebarIcon iconType="bike" />
             </Link>
           </li>
           <li className="side-bar__list-item">
-            <Link href="#line" className="side-bar__link">
+            <Link href="#line" className="side-bar__link" scroll={false}>
               <SidebarIcon iconType="dumbbell" />
             </Link>
           </li>

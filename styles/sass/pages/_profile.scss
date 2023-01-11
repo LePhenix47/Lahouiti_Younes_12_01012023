@@ -53,11 +53,12 @@
         @include tablet-only {
             @include center-flex-column(50px)
         }
+
+        @include mobile-only {
+            @include center-flex-column(50px)
+        }
     }
 
-    @include mobile-only {
-        @include center-flex-column(50px)
-    }
 
     &__key-data {
         display: flex;
@@ -359,7 +360,7 @@
 
         color: var(--text-color-quaternary);
 
-        opacity: 70%;
+        opacity: 50%;
     }
 
 

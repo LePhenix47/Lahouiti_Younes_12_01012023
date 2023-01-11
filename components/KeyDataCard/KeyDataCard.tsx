@@ -9,6 +9,7 @@ import {
   splitString,
   splitOnUpperCase,
   formatText,
+  numberSeparatorLocale,
 } from "../../react-utils/functions/helperFunctions";
 
 export default function KeyDataCard({ dataType, keyCardData }: any) {
@@ -23,7 +24,9 @@ export default function KeyDataCard({ dataType, keyCardData }: any) {
   nameOfType = formatText(nameOfType, "titlecase");
 
   //The type value contains the value with its unit
-  const typeValue = `${keyCardData?.[dataType]}${unit}`;
+  const value = keyCardData?.[dataType];
+  const formattedValue = numberSeparatorLocale(value);
+  const typeValue = `${formattedValue}${unit}`;
 
   return (
     <section className="key-data-card">

@@ -59,8 +59,6 @@ export default function BarsChart({ data }: any) {
         <YAxis orientation="right" />
         <Tooltip animationEasing="ease-out" />
 
-        {/* <Legend verticalAlign="top" iconType="circle" /> */}
-
         <Bar
           dataKey="kg"
           fill="var(--bg-color-secondary)"

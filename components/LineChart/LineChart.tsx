@@ -29,7 +29,8 @@ export default function LineChart({ data }: any) {
         margin={{ top: 5, right: 30, left: 30, bottom: 5 }}
       >
         <XAxis dataKey="name" />
-        {/* <YAxis dataKey="min" /> */}
+        <YAxis dataKey="min" hide />
+
         <Line
           type="monotone"
           name="min"
