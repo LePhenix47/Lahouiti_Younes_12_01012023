@@ -59,7 +59,7 @@ export default function GaugeChart({ data }: any): JSX.Element {
 }
 
 //
-function GaugeCustomTooltip(active: any): any {
+function GaugeCustomTooltip(active: any): JSX.Element | null {
   let scoreData: any = null;
 
   for (let payloadValue of active.payload) {

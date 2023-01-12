@@ -11,7 +11,8 @@ import AppService from "../services/_app.service";
 import SpinLoader from "../components/SpinLoader/SpinLoader";
 
 // INFO: in Next.js, routes are automatically created whenever we add a new page
-//⚠ VERY IMPORTANT: index.tsx → Main page at the route "/" must not have its name changed
+//⚠ VERY IMPORTANT: index.tsx → Main page at the route "/"
+//The name of the file must NOT have its name changed
 
 export default function Home(): JSX.Element {
   //We recover the userId through the URL parameters

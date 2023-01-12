@@ -3,7 +3,9 @@ import React from "react";
 
 //Next
 import Image from "next/image";
-import Link from "next/link";
+
+//Images
+import SportSeeLogo from "../../public/images/icons/sport-see-full-LOGO.svg";
 
 //Components
 import NavLink from "../NavLink/NavLink";
@@ -13,7 +15,7 @@ export default function Header(): JSX.Element {
     <header className="header">
       <div className="header__page-logo">
         <Image
-          src="/images/icons/sport-see-full-LOGO.svg"
+          src={SportSeeLogo}
           alt="Logo du site de SportSee"
           width={178}
           height={60}
@@ -22,7 +24,7 @@ export default function Header(): JSX.Element {
 
       <nav className="header__nav-bar">
         <ul className="header__unordered-list">
-          <NavLink href="/" shallow>
+          <NavLink href="/">
             <li className="header__list-item">Accueil</li>
           </NavLink>
           <NavLink href="/profile-page">
