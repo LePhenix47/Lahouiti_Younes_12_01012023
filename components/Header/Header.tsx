@@ -5,7 +5,10 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Header() {
+//Components
+import NavLink from "../NavLink/NavLink";
+
+export default function Header(): JSX.Element {
   return (
     <header className="header">
       <div className="header__page-logo">
@@ -19,18 +22,18 @@ export default function Header() {
 
       <nav className="header__nav-bar">
         <ul className="header__unordered-list">
-          <Link href="/" shallow>
+          <NavLink href="/" shallow>
             <li className="header__list-item">Accueil</li>
-          </Link>
-          <Link href="/profile-page">
+          </NavLink>
+          <NavLink href="/profile-page">
             <li className="header__list-item">Profil</li>
-          </Link>
-          <Link href="/settings">
+          </NavLink>
+          <NavLink href="/settings">
             <li className="header__list-item">Réglages</li>
-          </Link>
-          <Link href="/community">
+          </NavLink>
+          <NavLink href="/community">
             <li className="header__list-item">Communauté</li>
-          </Link>
+          </NavLink>
         </ul>
       </nav>
     </header>

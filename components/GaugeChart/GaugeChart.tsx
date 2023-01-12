@@ -6,7 +6,7 @@ import { RadialBar, RadialBarChart, Tooltip } from "recharts";
 //Utils
 import { toPercent } from "../../react-utils/functions/helperFunctions";
 
-export default function GaugeChart({ data }: any) {
+export default function GaugeChart({ data }: any): JSX.Element {
   const percentTester: number = 1;
 
   const percentageValue: number = data * 100 * percentTester;
@@ -23,6 +23,7 @@ export default function GaugeChart({ data }: any) {
     <div className="gauge-chart">
       <h2 className="gauge-chart__percentage">{stringPercentage}</h2>
       <p className="gauge-chart__subtitle">de votre objectif</p>
+
       <RadialBarChart
         width={330}
         height={250}
@@ -57,6 +58,7 @@ export default function GaugeChart({ data }: any) {
   );
 }
 
+//
 function GaugeCustomTooltip(active: any): any {
   let scoreData: any = null;
 
@@ -67,7 +69,7 @@ function GaugeCustomTooltip(active: any): any {
   const payloadIsEmpty: boolean = !active.payload.length;
 
   if (payloadIsEmpty) {
-    return;
+    return null;
   }
 
   return (

@@ -7,9 +7,17 @@ import GaugeChart from "../GaugeChart/GaugeChart";
 import LineChart from "../LineChart/LineChart";
 import RadarChart from "../RadarChart/RadarChart";
 
-export default function Chart({ chartType, chartData }: any): any {
+//
+export default function Chart({
+  chartType,
+  chartData,
+}: {
+  chartType: string;
+  chartData: any;
+}): JSX.Element | null {
   // const chartIsBarChart = chartType.includes("bar");
-  const [initialRenderComplete, setInitialRenderComplete] = useState(false);
+  const [initialRenderComplete, setInitialRenderComplete] =
+    useState<boolean>(false);
 
   // console.log({ chartType, chartData });
 
@@ -44,7 +52,7 @@ export default function Chart({ chartType, chartData }: any): any {
   }, []);
 
   if (!initialRenderComplete) {
-    return;
+    return null;
   }
 
   return (

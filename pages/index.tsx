@@ -13,7 +13,7 @@ import SpinLoader from "../components/SpinLoader/SpinLoader";
 // INFO: in Next.js, routes are automatically created whenever we add a new page
 //⚠ VERY IMPORTANT: index.tsx → Main page at the route "/" must not have its name changed
 
-export default function Home() {
+export default function Home(): JSX.Element {
   //We recover the userId through the URL parameters
   let userId = 12;
 

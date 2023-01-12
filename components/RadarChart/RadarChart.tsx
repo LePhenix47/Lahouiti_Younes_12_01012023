@@ -14,7 +14,7 @@ import {
 //Utils
 import FormatChartData from "../../services/formatChartData";
 
-export default function RadarChart({ data }: any) {
+export default function RadarChart({ data }: any): JSX.Element {
   const chartDataFormatter = new FormatChartData();
 
   const minValue: number = 0;

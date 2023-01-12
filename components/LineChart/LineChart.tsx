@@ -17,7 +17,7 @@ import {
 //Services
 import FormatChartData from "../../services/formatChartData";
 
-export default function LineChart({ data }: any) {
+export default function LineChart({ data }: any): JSX.Element {
   const chartDataFormatter = new FormatChartData();
   // console.log({ data });
 

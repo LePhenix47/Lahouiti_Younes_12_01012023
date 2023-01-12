@@ -1,10 +1,10 @@
 //Function that prints out a message in the console but with a simpler syntax
-export function log(message: string) {
+export function log(message: string): any {
   return console.log(message);
 }
 
 //Function that formats text in 3 cases: lowercase, uppercase and titlecase
-export function formatText(string: string, option: string) {
+export function formatText(string: string, option: string): string | never {
   let formattedOption = option.toLowerCase().trim();
 
   switch (formattedOption) {
@@ -37,7 +37,7 @@ export function formatText(string: string, option: string) {
 
 //Funtion that replaces letters with accents by their "non-accented" counter-part
 //ex: "crème brûlée" → "creme brulee"
-export function normalizeString(string: string) {
+export function normalizeString(string: string): string | undefined {
   if (typeof string !== "string") {
     log("Value passed in argument is not a string !");
     return;

@@ -63,6 +63,7 @@ export default class FormatChartData {
       const activity = data.sessions[i];
 
       const { day, sessionLength } = activity;
+
       dataValuesArray.push({
         name: this.sessionsXAxis[day - 1],
         min: sessionLength,
@@ -87,9 +88,7 @@ export default class FormatChartData {
     for (let i = 0; i < data.sessions.length; i++) {
       const sessions = data.sessions[i];
 
-      const { day, kilogram, calories } = sessions;
-
-      // const formattedDateDay = new Date(day).getDay();
+      const { kilogram, calories } = sessions;
 
       dataValuesArray.push({
         name: (i + 1).toString(),

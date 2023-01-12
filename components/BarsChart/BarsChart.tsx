@@ -14,7 +14,7 @@ import FormatChartData from "../../services/formatChartData";
 
 //Components
 
-export default function BarsChart({ data }: any) {
+export default function BarsChart({ data }: any): JSX.Element {
   const chartDataFormatter = new FormatChartData();
 
   const formattedData = chartDataFormatter.setBarsFormattedData(data);
@@ -87,7 +87,7 @@ function BarsCustomTooltip(active: any): any {
   const payloadIsEmpty: boolean = !active.payload.length;
 
   if (payloadIsEmpty) {
-    return;
+    return null;
   }
 
   return (
