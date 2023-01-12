@@ -435,6 +435,10 @@
         text-align: center;
         width: 65px;
     }
+
+    & .recharts-sector.recharts-tooltip-cursor {
+        stroke: none;
+    }
 }
 
 
