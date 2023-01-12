@@ -1,6 +1,6 @@
 # [P12] SportSee, build an analytics dashboard with React by Younes LAHOUITI
 
-## 0. Project folder structure
+## 0. Project folder structure and miscellaneous
 
 Here's the current folders structure for the application
 ```
@@ -13,6 +13,27 @@ P12/
 |   |– ...
 ```
 
+Naming convention rules for this project:
+
+*CSS*:
+<ul>
+  <li>
+      For variable names: kebab-case
+  </li>
+</ul>
+
+*JS*:
+ <ul>
+  <li>
+      For variable and function names: camelCase
+  </li>
+  <li>
+      For classes: PascalCase
+  </li>
+  <li>
+      For contextualized variables: SNAKE_CASE
+  </li>
+</ul>
 
 # 1. Front-end
 
