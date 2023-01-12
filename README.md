@@ -80,7 +80,7 @@ For the Front-end, you will need to compile the Next.js app by using the script:
 
 Just like for the Front-end, you will need to do the same steps
 
-To view a more detailed installation on the 
+To view a more detailed installation guide, you can go on the 
 [repository of the Back-end](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard) of the project
 
 
