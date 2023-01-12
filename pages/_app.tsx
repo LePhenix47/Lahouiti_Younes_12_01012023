@@ -6,6 +6,9 @@ import type { AppProps } from "next/app";
 
 //Components
 import Container from "../components/Container/Container";
+import { Head } from "next/document";
+
+//Next
 
 //Utils
 //Root component, every page created by Next.js will go through here
@@ -13,8 +16,18 @@ import Container from "../components/Container/Container";
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
-    <Container>
-      <Component {...pageProps} />
-    </Container>
+    <>
+      <Head>
+        {/*
+         <!-- Meta tags-->
+         */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="color-scheme" content="dark light" />
+      </Head>
+
+      <Container>
+        <Component {...pageProps} />
+      </Container>
+    </>
   );
 }
