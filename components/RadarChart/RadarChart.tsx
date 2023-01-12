@@ -3,8 +3,6 @@ import React from "react";
 //Rechart.js
 import {
   RadarChart as RadarChartJS,
-  Line,
-  Legend,
   PolarAngleAxis,
   PolarGrid,
   PolarRadiusAxis,

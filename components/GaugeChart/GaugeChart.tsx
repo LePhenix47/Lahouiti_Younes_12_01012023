@@ -1,7 +1,7 @@
 import React from "react";
 
 //Rechart.js
-import { Legend, RadialBar, RadialBarChart, Tooltip } from "recharts";
+import { RadialBar, RadialBarChart, Tooltip } from "recharts";
 
 //Utils
 import { toPercent } from "../../react-utils/functions/helperFunctions";
@@ -11,7 +11,7 @@ export default function GaugeChart({ data }: any) {
 
   const percentageValue: number = data * 100 * percentTester;
 
-  const stringPercentage = toPercent(data);
+  const stringPercentage: string = toPercent(data);
 
   const formattedData: {
     value: number;
@@ -44,9 +44,37 @@ export default function GaugeChart({ data }: any) {
           stroke-linejoin="round"
           fill="var(--bg-color-primary)"
           cornerRadius={100}
-          background={{ fill: "red" }}
+        />
+
+        <Tooltip
+          animationEasing="ease-out"
+          content={<GaugeCustomTooltip payload={formattedData} />}
+          offset={20}
+          wrapperStyle={{ outline: "none" }}
         />
       </RadialBarChart>
+    </div>
+  );
+}
+
+function GaugeCustomTooltip(active: any): any {
+  let scoreData: any = null;
+
+  for (let payloadValue of active.payload) {
+    scoreData = payloadValue.payload.value;
+  }
+
+  const payloadIsEmpty: boolean = !active.payload.length;
+
+  if (payloadIsEmpty) {
+    return;
+  }
+
+  return (
+    <div className="tool-tip__gauge-chart">
+      <p className="tool-tip__gauge-chart-text">
+        {`Score actuel de votre objectif: ${scoreData}/100`}
+      </p>
     </div>
   );
 }

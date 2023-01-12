@@ -473,6 +473,18 @@
             font-weight: 500;
         }
     }
+
+    &__gauge-chart {
+        background-color: var(--body-bg-color);
+
+        &-text {
+            color: var(--text-color-primary);
+            font-size: 12px;
+            padding: 10px 15px;
+            font-weight: 500;
+            width: 120px;
+        }
+    }
 }
 
 

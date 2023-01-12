@@ -89,7 +89,6 @@ export default function LineChart({ data }: any) {
             fill="url(#colorMin)"
           />
 
-          {/* <Legend align="left" verticalAlign="top" /> */}
           <Tooltip
             animationEasing="ease-out"
             content={<LineCustomTooltip payload={formattedData} />}

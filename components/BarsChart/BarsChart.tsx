@@ -1,11 +1,8 @@
 //Rechart.js
 import {
-  LineChart,
-  Line,
   BarChart,
   Bar,
   CartesianGrid,
-  Legend,
   Tooltip,
   XAxis,
   YAxis,
@@ -40,8 +37,8 @@ export default function BarsChart({ data }: any) {
         <BarChart
           data={formattedData}
           margin={{
-            top: 45,
-            right: 45,
+            top: 15,
+            right: 15,
             left: 65,
             bottom: 85,
           }}
@@ -54,7 +51,7 @@ export default function BarsChart({ data }: any) {
           <XAxis dataKey="name" tickLine={false} axisLine={false} />
           <YAxis orientation="right" tickLine={false} axisLine={false} />
           <Tooltip
-            // animationEasing="ease-out"
+            animationEasing="ease-out"
             content={<BarsCustomTooltip payload={formattedData} />}
             offset={40}
             wrapperStyle={{ outline: "none" }}

@@ -6,7 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Header() {
-  // console.log(d3);
   return (
     <header className="header">
       <div className="header__page-logo">
@@ -20,7 +19,7 @@ export default function Header() {
 
       <nav className="header__nav-bar">
         <ul className="header__unordered-list">
-          <Link href="/">
+          <Link href="/" shallow>
             <li className="header__list-item">Accueil</li>
           </Link>
           <Link href="/profile-page">
