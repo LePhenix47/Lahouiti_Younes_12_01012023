@@ -1,5 +1,18 @@
 # [P12] SportSee, build an analytics dashboard with React by Younes LAHOUITI
 
+## 0. Project folder structure
+
+Here's the current folders structure for the Front-end and the Back-end
+```
+P12/
+|
+|– sport-see/
+|   |– ...
+|
+|– P9-front-end-dashboard/
+|   |– ...
+```
+
 ## 1. Front-end
 
 ### 1.1 Project stack:
