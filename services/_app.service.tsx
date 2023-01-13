@@ -8,7 +8,9 @@ export default class AppService {
   urlAPI: string;
 
   constructor() {
+    //For the deployment on vercel, it checks if
     this.urlAPI = "http://localhost:4200/user";
+    // this.urlAPI = "https://p12-api.onrender.com/user";
   }
 
   /* 

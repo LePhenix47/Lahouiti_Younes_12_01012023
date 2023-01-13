@@ -7,6 +7,12 @@
     Will in the future change the syntax in the range with a less obsolete version
     ex: @media screen and ( map-get($breakpoints, mobile) <= width <=  map-get($breakpoints, tablet) ){...}
 
+    We can also go a little further by adding custom media queries
+
+    ex: @custom-media --desktop-range (768px <= width <= 992px)
+
+    @media --desktop-range {...}
+
 */
 
 @mixin mobile-only {
