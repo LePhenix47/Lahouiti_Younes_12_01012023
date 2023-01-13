@@ -5,27 +5,45 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs";
 import path from "path";
 
-type Data = {
+type sessionsData = {
   data: {
-    id: number;
-    userInfos: {
-      firstName: string;
-      lastName: string;
-      age: number;
-    };
-    todayScore: number;
-    keyData: {
-      calorieCount: number;
-      proteinCount: number;
-      carbohydrateCount: number;
-      lipidCount: number;
-    };
+    userId: 12;
+    sessions: [
+      {
+        day: 1;
+        sessionLength: number;
+      },
+      {
+        day: 2;
+        sessionLength: number;
+      },
+      {
+        day: 3;
+        sessionLength: number;
+      },
+      {
+        day: 4;
+        sessionLength: number;
+      },
+      {
+        day: 5;
+        sessionLength: number;
+      },
+      {
+        day: 6;
+        sessionLength: number;
+      },
+      {
+        day: 7;
+        sessionLength: number;
+      }
+    ];
   };
 };
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<sessionsData>
 ) {
   const getRequest: boolean = req.method === "GET";
 
@@ -40,7 +58,7 @@ export default function handler(
 
   const jsonFileData: Buffer = fs.readFileSync(filePath);
   // @ts-ignore Ignore the following error
-  const data: Data = JSON.parse(jsonFileData);
+  const data: sessionsData = JSON.parse(jsonFileData);
 
   res.status(200).json(data);
 }

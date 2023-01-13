@@ -5,7 +5,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs";
 import path from "path";
 
-type Data = {
+type userData = {
   data: {
     id: number;
     userInfos: {
@@ -25,7 +25,7 @@ type Data = {
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<userData>
 ) {
   const getRequest: boolean = req.method === "GET";
 
@@ -40,7 +40,7 @@ export default function handler(
 
   const jsonFileData: Buffer = fs.readFileSync(filePath);
   // @ts-ignore Ignore the following error
-  const data: Data = JSON.parse(jsonFileData);
+  const data: userData = JSON.parse(jsonFileData);
 
   res.status(200).json(data);
 }
