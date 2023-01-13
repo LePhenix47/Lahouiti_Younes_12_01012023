@@ -1,5 +1,5 @@
 //Given the fact that @import is deprecated → must use @use and @forward instead
-@use "../Utils/" as *;
+@use "../utils/" as *;
 
 //Removes ANY animation if the user has the reduced motion option enabled in their device
 @media (prefers-reduced-motion) {
