@@ -8,6 +8,7 @@ import Link from "next/link";
 import SidebarIcon from "../SidebarIcon/SidebarIcon";
 
 export default function NavSidebar() {
+  const currentYear = new Date().getFullYear();
   return (
     <aside className="side-bar">
       <nav className="side-bar__nav">
@@ -34,7 +35,9 @@ export default function NavSidebar() {
           </li>
         </ul>
       </nav>
-      <small className="side-bar__copyright">Copyright, SportSee 2020 ©</small>
+      <small className="side-bar__copyright">
+        Copyright, SportSee 2020 - {currentYear} ©
+      </small>
     </aside>
   );
 }
