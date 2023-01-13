@@ -35,6 +35,11 @@ Naming convention rules for this project:
   </li>
 </ul>
 
+
+This project has a responsive design and a dark/light theme
+
+If you wish to switch between the two 
+
 # 1. Front-end
 
 ## 1.1 Front-end stack:
