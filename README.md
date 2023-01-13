@@ -59,13 +59,15 @@ Naming convention rules for this project:
 
  <ul>
   <li>Mocks Service Worker </li>
+  <li>D3.js</li>
   <li>Recharts</li>
   </ul>
 
 
 <a href="https://mswjs.io" target="_blank" rel="noreferrer">
 <img src="./public/svg/msw-logo.svg" width="36" height="36"/>
-</a>
+</a> 
+<a href="https://d3js.org" target="_blank" rel="noreferrer"><img src="https://www.wappalyzer.com/images/icons/D3.png" width="32" height="32" alt="Document-Driven Data" /></a>
 <a href="https://recharts.org" target="_blank" rel="noreferrer"><img src="https://www.wappalyzer.com/images/icons/Recharts.svg" width="46" height="46" alt="Recharts" /></a>
 
 ## 1.2 Front-end installation guide:
