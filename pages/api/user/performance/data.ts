@@ -35,7 +35,7 @@ export default function handler(
   const filePath: string = path.join(
     process.cwd(),
     "public/mocks",
-    "userData.json"
+    "userPerformanceData.json"
   );
 
   const jsonFileData: Buffer = fs.readFileSync(filePath);
