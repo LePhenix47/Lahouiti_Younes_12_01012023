@@ -9,9 +9,14 @@
 
     We can also go a little further by adding custom media queries
 
-    ex: @custom-media --desktop-range (768px <= width <= 992px)
+    ex: 
+        @custom-media --desktop-range (768px <= width <= 992px);
 
-    @media --desktop-range {...}
+        @mixin desktop-only {
+            @media --desktop-range {
+                @content;
+            }
+        }
 
 */
 

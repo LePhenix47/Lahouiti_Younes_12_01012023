@@ -15,7 +15,6 @@ import SpinLoader from "../components/SpinLoader/SpinLoader";
 //The name of the file must NOT have its name changed
 
 export default function Home(): JSX.Element {
-  //We recover the userId through the URL parameters
   let userId = 12;
 
   /*
