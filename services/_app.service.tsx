@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+
 //Utils
 import { useFetch } from "../react-utils/hooks/useFetch";
 import { dataType } from "../react-utils/types/dataType";
@@ -13,11 +15,6 @@ export default class AppService {
     // this.urlAPI = "https://p12-api.onrender.com/user";
   }
 
-  /* 
-  @param id string
-
-  @return data object
-  */
   //  Retrieves information from the user
   getUserInfo(id: number): dataType {
     const data: dataType = useFetch(`${this.urlAPI}/${id}`);
