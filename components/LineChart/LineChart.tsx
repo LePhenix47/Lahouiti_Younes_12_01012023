@@ -57,7 +57,7 @@ export default function LineChart({ data }: any): JSX.Element {
 
         <AreaChart
           data={formattedData}
-          margin={{ top: 60, right: 30, left: 30, bottom: 5 }}
+          margin={{ top: 60, right: 20, left: 20, bottom: 5 }}
         >
           <defs>
             <linearGradient id="colorMin" x1="0" y1="0" x2="0" y2="1">
@@ -78,6 +78,7 @@ export default function LineChart({ data }: any): JSX.Element {
             axisLine={false}
             tickLine={false}
             stroke="var(--text-color-quaternary)"
+            // padding={{ left: 0, right: 0 }}
           />
           <YAxis dataKey="min" hide />
           <Area

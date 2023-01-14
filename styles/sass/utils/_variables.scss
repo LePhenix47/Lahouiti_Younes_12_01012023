@@ -6,6 +6,8 @@ $header-sidebar-color: white;
 
 $shadow-color: #000000bf;
 
+$gauge-bg-inner-circle-bg-color: #ffffff33;
+
 $scrollbar-track-bg-color: rgb(211, 211, 211);
 $scrollbar-thumb-bg-color: rgb(139, 140, 140);
 $scrollbar-thumb-bg-color--hover: darken($scrollbar-thumb-bg-color, 10%);
@@ -40,6 +42,8 @@ $bars-bg-color--hover: #C4C4C480;
     --header-sidebar-color:#{$header-sidebar-color};
 
     --shadow-color: #{$shadow-color};
+
+    --gauge-bg-inner-circle-bg-color: #{$gauge-bg-inner-circle-bg-color};
 
     --calorie-icon-color: #{$calorie-icon-color};
     --proteins-icon-color: #{$proteins-icon-color};

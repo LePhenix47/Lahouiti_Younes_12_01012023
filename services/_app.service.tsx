@@ -13,7 +13,7 @@ export default class AppService {
     //For the deployment on vercel, it checks if
     // this.urlAPI = "http://localhost:4200/user";
 
-    this.urlAPI = "http://localhost:3000//api/user";
+    // this.urlAPI = "http://localhost:3000//api/user";
     this.urlAPI = "https://lahouiti-younes-p12.vercel.app/api/user";
   }
 

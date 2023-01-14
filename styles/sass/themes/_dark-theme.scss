@@ -5,6 +5,8 @@
 
     $shadow-color: #ffffffbf;
 
+    $gauge-bg-inner-circle-bg-color: rgba(0, 0, 0, 0.2);
+
     $scrollbar-track-bg-color: #2c2c2c;
     $scrollbar-thumb-bg-color: #747373;
     $scrollbar-thumb-bg-color--hover: lighten($scrollbar-thumb-bg-color, 10%);
@@ -31,6 +33,8 @@
         --header-sidebar-bg-color: #{$header-sidebar-bg-color};
 
         --shadow-color: #{$shadow-color};
+
+        --gauge-bg-inner-circle-bg-color: #{$gauge-bg-inner-circle-bg-color};
 
         --scrollbar-track-bg-color: #{$scrollbar-track-bg-color};
         --scrollbar-thumb-bg-color: #{$scrollbar-thumb-bg-color};

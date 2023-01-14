@@ -19,6 +19,11 @@ export default function BarsChart({ data }: any): JSX.Element {
 
   const formattedData = chartDataFormatter.setBarsFormattedData(data);
 
+  const chartsMargins =
+    window.innerWidth > 768
+      ? { top: 15, right: 15, left: 65, bottom: 85 }
+      : { top: 10, right: -5, left: 25, bottom: 85 };
+
   return (
     <div className="bars-chart">
       <div className="bars-chart__container">
@@ -34,15 +39,7 @@ export default function BarsChart({ data }: any): JSX.Element {
         </ul>
       </div>
       <ResponsiveContainer>
-        <BarChart
-          data={formattedData}
-          margin={{
-            top: 15,
-            right: 15,
-            left: 65,
-            bottom: 85,
-          }}
-        >
+        <BarChart data={formattedData} margin={chartsMargins}>
           <CartesianGrid
             strokeDasharray="2 2"
             horizontal={true}

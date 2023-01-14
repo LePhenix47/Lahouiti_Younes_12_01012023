@@ -38,6 +38,7 @@ export default function GaugeChart({ data }: any): JSX.Element {
           left: 0,
           bottom: 0,
         }}
+        className="gauge-chart__svg-chart"
       >
         <RadialBar
           name="score"
