@@ -1,0 +1,36 @@
+@use "../utils/" as *;
+
+.api-error {
+    @include center-flex-column(45px);
+    width: 100%;
+
+    min-height: 80vh;
+
+    text-align: center;
+
+    // &__title {}
+
+    // &__subtitle {}
+
+    &__message {
+        // color: var(--text-color-tertiary);
+        font-style: italic;
+
+        &--strong {
+            display: inline-block;
+            padding: 10px;
+            color: var(--text-color-primary);
+            text-decoration: underline 2px var(--text-color-tertiary);
+            font-style: normal;
+
+        }
+    }
+
+    &__refresh-page-button {
+        border-radius: 15px;
+        background-color: var(--bg-color-primary);
+        color: var(--text-color-quaternary);
+
+        padding: 15px 20px;
+    }
+}

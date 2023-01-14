@@ -38,7 +38,7 @@ Naming convention rules for this project:
 
 This project has a responsive design and a dark/light theme
 
-If you wish to switch between the two 
+If you wish to switch between the two, you can press the <kbd>F12</kbd> key
 
 # 1. Front-end
 

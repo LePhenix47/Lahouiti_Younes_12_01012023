@@ -59,7 +59,12 @@ input {
         border: none;
         outline: none;
     }
+}
 
+button {
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 a {

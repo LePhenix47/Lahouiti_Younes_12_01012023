@@ -9,6 +9,7 @@ import Chart from "../components/Chart/Chart";
 import KeyDataCard from "../components/KeyDataCard/KeyDataCard";
 import AppService from "../services/_app.service";
 import SpinLoader from "../components/SpinLoader/SpinLoader";
+import ApiError from "../components/ApiError/ApiError";
 
 // INFO: in Next.js, routes are automatically created whenever we add a new page
 //⚠ VERY IMPORTANT: index.tsx → Main page at the route "/"
@@ -84,13 +85,28 @@ export default function Home(): JSX.Element {
     setGaugeChartData(gaugeData);
   });
 
-  //Boolean condition to check if all the different data across all fetch requests are loaded
   const fetchedDataArray: any[] = [
     generalInfoData,
     activityInfoData,
     sessionsInfoData,
     performanceInfoData,
   ];
+
+  //Boolean condition to check if there was an issue when making the fetch request
+  const dataHasError: boolean = fetchedDataArray.some((fetchedData) => {
+    return fetchedData.hasError;
+  });
+
+  //If any of the fetch calls fails then show the API error on screen
+  if (dataHasError) {
+    const dataErrorMessages: any[] = fetchedDataArray.map((fetchedData) => {
+      return fetchedData.errorMessage.message;
+    });
+
+    return <ApiError apiErrorMessage={dataErrorMessages} />;
+  }
+
+  //Boolean condition to check if all the different data across all fetch requests are loaded
 
   const dataIsLoading: boolean = fetchedDataArray.some((fetchedData) => {
     return fetchedData.isLoading;

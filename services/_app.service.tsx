@@ -14,7 +14,7 @@ export default class AppService {
     // this.urlAPI = "http://localhost:4200/user";
 
     this.urlAPI = "http://localhost:3000//api/user";
-    // this.urlAPI = "https://lahouiti-younes-p12.vercel.app/api/user";
+    this.urlAPI = "https://lahouiti-younes-p12.vercel.app/api/user";
   }
 
   //  Retrieves information from the user

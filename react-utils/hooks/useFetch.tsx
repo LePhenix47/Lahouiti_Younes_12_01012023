@@ -26,18 +26,13 @@ export function useFetch(url: string) {
         const dataFromFetch = await response.json();
 
         setData(dataFromFetch);
-      } catch (APIError: unknown) {
+      } catch (APIError: any) {
+        setErrorMessage(APIError);
+
         console.error(
-          `⚠ API Error found! An unexpected error has occured while attempting to make a call to the API → ${APIError}`
+          `⚠ API Error found! An unexpected error has occured while attempting to make a call to the API → ${APIError} ⚠`
         );
         setError(true);
-
-        //Since the type is "unknown" (in TS) → must check with a conditional statement
-        //its type before assigning it a value
-        const errorMessageIsAString = typeof APIError === "string";
-        if (errorMessageIsAString) {
-          setErrorMessage(APIError);
-        }
       } finally {
         setLoading(false);
       }
