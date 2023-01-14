@@ -3,19 +3,19 @@
 .side-bar {
     display: flex;
 
-
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 
-    box-shadow: 0px 10px 10px var(--shadow-color);
-
     width: 115px;
-
     min-height: 95vh;
     height: auto;
 
+    padding-block-end: 25px;
+
     background-color: var(--header-sidebar-bg-color);
+
+    box-shadow: 0px 10px 10px var(--shadow-color);
 
     @include mobile-only {
         flex-direction: column;
@@ -52,7 +52,7 @@
     }
 
     &__link {
-        background-color: white;
+        background-color: var(--header-sidebar-color);
 
         padding: 13px;
 
