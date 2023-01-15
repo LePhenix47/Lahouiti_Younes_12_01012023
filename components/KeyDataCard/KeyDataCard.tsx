@@ -4,6 +4,12 @@ import React from "react";
 //Next
 import Image from "next/image";
 
+//Images
+import fireIcon from "../../public/svg/calorie.svg";
+import chickenLegIcon from "../../public/svg/protein.svg";
+import appleIcon from "../../public/svg/carbohydrate.svg";
+import burgerIcon from "../../public/svg/lipid.svg";
+
 //Utils
 import {
   splitString,
@@ -30,13 +36,34 @@ export default function KeyDataCard({ dataType, keyCardData }: any) {
   //The type value contains the value with its unit
   const typeValue = `${formattedValue}${unit}`;
 
+  let svgIcon = null;
+  switch (nameOfType) {
+    case "Calorie": {
+      svgIcon = fireIcon;
+      break;
+    }
+    case "Protein": {
+      svgIcon = chickenLegIcon;
+      break;
+    }
+    case "Carbohydrate": {
+      svgIcon = appleIcon;
+      break;
+    }
+    case "Lipid": {
+      svgIcon = burgerIcon;
+      break;
+    }
+  }
+
   return (
     <section className="key-data-card">
       <div
         className={`key-data-card__image-container key-data-card__image-container--${formattedClass}`}
       >
         <Image
-          src={`/svg/${nameOfType}.svg`}
+          // src={`/svg/${nameOfType}.svg`}
+          src={svgIcon}
           alt=""
           className="key-data-card__image"
           width={40}
