@@ -10,10 +10,10 @@
     We can also go a little further by adding custom media queries
 
     ex: 
-        @custom-media --desktop-range (768px <= width <= 992px);
+        @custom-media --tablet-range (768px <= width <= 992px);
 
         @mixin desktop-only {
-            @media --desktop-range {
+            @media --tablet-range {
                 @content;
             }
         }
@@ -38,8 +38,14 @@
     }
 }
 
+@mixin desktop-small-only {
+    @media screen and (1150px <=width <=1475px) {
+        @content;
+    }
+}
+
 @mixin desktop-only {
-    @media screen and (min-width: map-get($breakpoints, desktop)) {
+    @media screen and (1475px <=width) {
         @content;
     }
 }

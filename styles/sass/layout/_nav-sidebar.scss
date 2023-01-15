@@ -40,6 +40,7 @@
 
         @include mobile-only {
             // flex-direction: column;
+            padding-top: 20px;
             @include grid(2, 2, auto)
         }
     }
@@ -54,7 +55,11 @@
     &__link {
         background-color: var(--header-sidebar-color);
 
-        padding: 13px;
+        padding: 14px;
+
+        @include mobile-only {
+            padding: 7px;
+        }
 
         border-radius: 6px;
     }
