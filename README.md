@@ -97,9 +97,9 @@ Afterwards you'll need to install all the project dependencies with `npm install
 <p style="text-decoration: underline;">For the Front-end, you will need to compile the Next.js app, but before compiling: </p>
 <br/>
 
-There are a few needed changes that you must do inside the `_app.service.tsx` from the `services` folder
+There are a few needed changes that you must do inside the `_app.service.tsx` file from the `services` folder
 
-Given the fact that this app is was deployed in Vercel and uses an internal API  to get the mocked data, the URL of the API and the URL inside the `useFetch` customized hook must be changed
+Given the fact that this app was deployed in Vercel and uses an internal API  to get the mocked data, the URL of the API and the URL inside the `useFetch` customized hook must be changed
 
 <span style="text-decoration: underline;">ex:</span>
 Before:
