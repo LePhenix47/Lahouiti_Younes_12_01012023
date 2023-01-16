@@ -1,11 +1,11 @@
 //Function that prints out a message in the console but with a simpler syntax
-export function log(message: string): any {
+export function log(message: string): void {
   return console.log(message);
 }
 
 //Function that formats text in 3 cases: lowercase, uppercase and titlecase
 export function formatText(string: string, option: string): string | never {
-  let formattedOption = option.toLowerCase().trim();
+  let formattedOption: string = option.toLowerCase().trim();
 
   switch (formattedOption) {
     case "lowercase": {
@@ -68,16 +68,18 @@ export function splitOnUpperCase(string: string): string {
     newString[i] = formatText(newString[i], "lowercase");
   }
 
-  let formattedString = newString.reduce((accumulated, currentValue) => {
-    return accumulated + "-" + currentValue;
-  });
+  let formattedString: string = newString.reduce(
+    (accumulated, currentValue) => {
+      return accumulated + "-" + currentValue;
+    }
+  );
 
   return formattedString;
 }
 
 //Retrieves the values of an object inside an array
 export function getObjectValues(object: object): any[] {
-  const objectIsDefined = !!object;
+  const objectIsDefined: boolean = !!object;
 
   if (objectIsDefined) {
     return Object.values(object);
@@ -87,7 +89,7 @@ export function getObjectValues(object: object): any[] {
 
 //Retrieves the properties of an object inside an array
 export function getObjectProperties(object: object): any[] {
-  const objectIsDefined = !!object;
+  const objectIsDefined: boolean = !!object;
 
   if (objectIsDefined) {
     return Object.keys(object);
@@ -108,7 +110,7 @@ export function toPercent(number: number, option?: any): string {
 //The user lives in Italy and we have: const number = 1_930 →returns "1.930"
 //If they lived in India and we have: const number = 1_930 →returns "1,930"
 export function numberSeparatorLocale(number: number): string {
-  const formatter = new Intl.NumberFormat(undefined, {
+  const formatter: Intl.NumberFormat = new Intl.NumberFormat(undefined, {
     maximumSignificantDigits: 3,
   });
 

@@ -17,7 +17,7 @@ export function useFetch(url: string): {
   //Will execute once and also everytime the url changes
   useEffect(() => {
     //We need the controller in case we make multiple successions of fetch requests
-    const controller = new AbortController();
+    const controller: AbortController = new AbortController();
 
     setLoading(true);
     if (!url) {
@@ -26,9 +26,9 @@ export function useFetch(url: string): {
 
     async function fetchData() {
       try {
-        const response = await fetch(url);
+        const response: Response = await fetch(url);
 
-        const dataFromFetch = await response.json();
+        const dataFromFetch: any = await response.json();
 
         setData(dataFromFetch);
       } catch (APIError: any) {
