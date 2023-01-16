@@ -57,6 +57,7 @@ export default function Home(): JSX.Element {
   //Data for the gauge chart
   const [gaugeChartData, setGaugeChartData] = useState<any>("");
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const userInfos: any = generalInfoData.data?.data?.userInfos;
 

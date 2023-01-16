@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
 
-export default function ApiError(apiErrorMessage: any) {
+export default function ApiError(apiErrorMessage: any): JSX.Element {
   const errorMessage = apiErrorMessage.apiErrorMessage[0];
 
   const router = useRouter();

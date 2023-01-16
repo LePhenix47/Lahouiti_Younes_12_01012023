@@ -4,7 +4,7 @@ import React from "react";
 //Next
 import Image from "next/image";
 
-export default function SidebarIcon({ iconType }: any) {
+export default function SidebarIcon({ iconType }: any): JSX.Element {
   return (
     <div className="side-bar__icon">
       <Image

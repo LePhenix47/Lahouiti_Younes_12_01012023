@@ -7,8 +7,8 @@ import Link from "next/link";
 //Components
 import SidebarIcon from "../SidebarIcon/SidebarIcon";
 
-export default function NavSidebar() {
-  const currentYear = new Date().getFullYear();
+export default function NavSidebar(): JSX.Element {
+  const currentYear: number = new Date().getFullYear();
   return (
     <aside className="side-bar">
       <nav className="side-bar__nav">

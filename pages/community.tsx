@@ -5,7 +5,7 @@ import React from "react";
 //Components
 import WorkInProgress from "../components/WorkInProgress/WorkInProgress";
 
-export default function Community() {
+export default function Community(): JSX.Element {
   return (
     <>
       <Head>

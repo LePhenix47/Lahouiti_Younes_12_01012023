@@ -18,25 +18,28 @@ import {
   numberSeparatorLocale,
 } from "../../react-utils/functions/helperFunctions";
 
-export default function KeyDataCard({ dataType, keyCardData }: any) {
+export default function KeyDataCard({
+  dataType,
+  keyCardData,
+}: any): JSX.Element {
   //We format the string to make it lowercase and add dashes between every word
-  const formattedClass = splitOnUpperCase(dataType);
+  const formattedClass: string = splitOnUpperCase(dataType);
 
   //We define the unit of measurement
-  let unit = dataType === "calorieCount" ? "kCal" : "g";
+  let unit: string = dataType === "calorieCount" ? "kCal" : "g";
 
   //We make the name of the type on titlecase
-  let nameOfType = splitString(formattedClass, "-")[0];
+  let nameOfType: string = splitString(formattedClass, "-")[0];
   nameOfType = formatText(nameOfType, "titlecase");
 
   //We get the value and we format the number depending on the user's locale
-  const value = keyCardData?.[dataType];
-  const formattedValue = numberSeparatorLocale(value);
+  const value: number = keyCardData?.[dataType];
+  const formattedValue: string = numberSeparatorLocale(value);
 
   //The type value contains the value with its unit
-  const typeValue = `${formattedValue}${unit}`;
+  const typeValue: string = `${formattedValue}${unit}`;
 
-  let svgIcon = null;
+  let svgIcon: any | null = null;
   switch (nameOfType) {
     case "Calorie": {
       svgIcon = fireIcon;
@@ -62,7 +65,6 @@ export default function KeyDataCard({ dataType, keyCardData }: any) {
         className={`key-data-card__image-container key-data-card__image-container--${formattedClass}`}
       >
         <Image
-          // src={`/svg/${nameOfType}.svg`}
           src={svgIcon}
           alt=""
           className="key-data-card__image"

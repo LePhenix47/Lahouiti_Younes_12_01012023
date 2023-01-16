@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SpinLoader() {
+export default function SpinLoader(): JSX.Element {
   return (
     <section className="spin-loader">
       <div className="spin-loader__ball spin-loader__ball--1"></div>
