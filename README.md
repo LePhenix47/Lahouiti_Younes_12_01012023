@@ -93,7 +93,58 @@ Afterwards you'll need to install all the project dependencies with `npm install
 
 ## 1.3 Launching the project
 
-For the Front-end, you will need to compile the Next.js app by using the script: 
+
+<p style="text-decoration: underline;">For the Front-end, you will need to compile the Next.js app, but before compiling: </p>
+<br/>
+
+There are a few needed changes that you must do inside the `_app.service.tsx` from the `services` folder
+
+Given the fact that this app is was deployed in Vercel and uses an internal API  to get the mocked data, the URL of the API and the URL inside the `useFetch` customized hook must be changed
+
+<span style="text-decoration: underline;">ex:</span>
+Before:
+```js
+  constructor() {
+    //For the deployment on vercel, it checks if
+    // this.urlAPI = "http://localhost:4200/user"; //→ NEEDS to be uncommented
+
+    // this.urlAPI = "http://localhost:3000//api/user";
+    this.urlAPI = "https://lahouiti-younes-p12.vercel.app/api/user"; //→ NEEDS to be commented
+  }
+
+  //  Retrieves information from the user
+  getUserInfo(id: number): dataType {
+    // const data: dataType = useFetch(`${this.urlAPI}/${id}`);
+    const data: dataType = useFetch(`${this.urlAPI}/data`);
+
+    return data;
+  }
+
+```
+
+After:
+```js
+  constructor() {
+    //For the deployment on vercel, it checks if
+    this.urlAPI = "http://localhost:4200/user";
+
+    // this.urlAPI = "http://localhost:3000//api/user";
+    //this.urlAPI = "https://lahouiti-younes-p12.vercel.app/api/user";
+  }
+
+  //  Retrieves information from the user
+  getUserInfo(id: number): dataType {
+    const data: dataType = useFetch(`${this.urlAPI}/${id}`);
+    // const data: dataType = useFetch(`${this.urlAPI}/data`);
+
+    return data;
+  }
+
+```
+
+
+
+ Once that change has been made, you can compile the app by using the script: 
 
 `npm run dev`
 <hr/>
