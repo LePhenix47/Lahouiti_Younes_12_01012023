@@ -18,20 +18,30 @@ Naming convention rules for this project:
 *CSS*:
 <ul>
   <li>
-      For variable names: kebab-case
+      For variable and class names: <code>kebab-case</code>
+      
+      ex: .main-page{...}
+      ex: --bg-color-primary: white
   </li>
 </ul>
 
 *JS*:
  <ul>
   <li>
-      For variable and function names: camelCase
+      For variable and function names: <code>camelCase</code> 
+      
+      ex: const arrayOfNumbers = [5, -6, 8, 3, 782];
+      ex: function sum(num1, num2) { return num1 + num2 };
   </li>
   <li>
       For classes: PascalCase
+      
+      ex: class FrontEndDeveloper extends Developer{...};
   </li>
   <li>
-      For contextualized variables: SNAKE_CASE
+      For contextualized variables: <code>SNAKE_CASE</code> 
+
+      ex: const MAX_32_BIT_INT = 2_147_483_647;
   </li>
 </ul>
 
