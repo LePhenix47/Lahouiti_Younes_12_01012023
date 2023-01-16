@@ -17,7 +17,11 @@ import FormatChartData from "../../services/formatChartData";
 export default function BarsChart({ data }: any): JSX.Element {
   const chartDataFormatter = new FormatChartData();
 
-  const formattedData = chartDataFormatter.setBarsFormattedData(data);
+  const formattedData: {
+    name: string;
+    kg: number;
+    Kcal: number;
+  }[] = chartDataFormatter.setBarsFormattedData(data);
 
   const chartsMargins =
     window.innerWidth > 768

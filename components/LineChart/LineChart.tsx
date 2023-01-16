@@ -21,7 +21,10 @@ export default function LineChart({ data }: any): JSX.Element {
   const chartDataFormatter = new FormatChartData();
   // console.log({ data });
 
-  const formattedData = chartDataFormatter.setLineFormattedData(data);
+  const formattedData: {
+    name: string;
+    min: number;
+  }[] = chartDataFormatter.setLineFormattedData(data);
 
   return (
     <div className="line-chart">
