@@ -100,11 +100,18 @@ export default function Home(): JSX.Element {
 
   //If any of the fetch calls fails then show the API error on screen
   if (dataHasError) {
-    const dataErrorMessages: any[] = fetchedDataArray.map((fetchedData) => {
-      return fetchedData.errorMessage.message;
-    });
+    const dataErrorMessage =
+      fetchedDataArray[0]?.errorMessage ||
+      fetchedDataArray[0]?.errorMessage.message;
 
-    return <ApiError apiErrorMessage={dataErrorMessages} />;
+    console.log(dataErrorMessage);
+    // const dataErrorMessages: any[] = fetchedDataArray.map((fetchedData) => {
+    //   console.log({ dataErrorMessage });
+
+    //   return dataErrorMessage;
+    // });
+
+    return <ApiError apiErrorMessage={dataErrorMessage} />;
   }
 
   //Boolean condition to check if all the different data across all fetch requests are loaded

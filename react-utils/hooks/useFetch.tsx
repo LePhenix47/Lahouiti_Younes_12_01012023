@@ -28,15 +28,23 @@ export function useFetch(url: string): {
       try {
         const response: Response = await fetch(url);
 
+        console.log({ response });
+        const fetchError: boolean = !response.ok;
+
+        if (fetchError) {
+          throw response.statusText;
+        }
+
         const dataFromFetch: any = await response.json();
+
+        console.log({ fetchError });
 
         setData(dataFromFetch);
       } catch (APIError: any) {
-        setErrorMessage(APIError);
-
         console.error(
           `⚠ API Error found! An unexpected error has occured while attempting to make a call to the API → ${APIError} ⚠`
         );
+        setErrorMessage(APIError);
         setError(true);
       } finally {
         setLoading(false);
