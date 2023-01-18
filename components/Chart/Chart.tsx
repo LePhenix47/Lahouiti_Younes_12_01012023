@@ -10,7 +10,7 @@ import RadarChart from "../RadarChart/RadarChart";
 //
 
 /**
- *
+ * Function component to display the correct chart depending on its type
  * @param data
  * @returns {JSX.Element}
  */
@@ -23,8 +23,6 @@ export default function Chart({
 }): JSX.Element | null {
   const [initialRenderComplete, setInitialRenderComplete] =
     useState<boolean>(false);
-
-  // console.log({ chartType, chartData });
 
   //Variable containing the actual chart
   let renderChart: any = null;

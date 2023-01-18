@@ -32,11 +32,10 @@ export function useFetch(url: string): {
     /**
      *Fetches data from an API
      */
-    async function fetchData() {
+    async function fetchData(): Promise<void> {
       try {
         const response: Response = await fetch(url);
 
-        console.log({ response });
         const fetchError: boolean = !response.ok;
 
         if (fetchError) {
@@ -44,8 +43,6 @@ export function useFetch(url: string): {
         }
 
         const dataFromFetch: any = await response.json();
-
-        console.log({ fetchError });
 
         setData(dataFromFetch);
       } catch (APIError: any) {

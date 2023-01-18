@@ -3,19 +3,19 @@ import { useRouter } from "next/router";
 import React from "react";
 
 /**
- *
+ *Function component to display the error message of the API
  * @param param0
  * @returns
  */
 export default function ApiError({ apiErrorMessage }: any): JSX.Element {
   const errorMessage = apiErrorMessage?.message || apiErrorMessage;
-  console.log({ errorMessage });
 
   const router = useRouter();
 
   /**
   //Function that reloads the page
    * 
+  @returns {void}
    */
   function refreshPage(): void {
     router.reload();

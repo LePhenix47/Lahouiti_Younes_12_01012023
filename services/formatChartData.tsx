@@ -2,15 +2,25 @@
  *@class Class to format the data for the different charts
  */
 export default class FormatChartData {
-  //Local variables
-
+  //Local variables for the properties
   activityXAxis: number[];
   sessionsXAxis: string[];
   performanceLabels: string[];
 
   constructor() {
+    /**
+     * @property {Array<number>} activityXAxis Property for the X axis of the bars chart
+     */
     this.activityXAxis = [1, 2, 3, 4, 5, 6, 7];
+
+    /**
+     * @property {Array<string>} sessionsXAxis Property for the X axis of the line chart
+     */
     this.sessionsXAxis = ["L", "M", "M", "J", "V", "S", "D"];
+
+    /**
+     * @property {Array<string>} performanceLabels Property for the different axis of the radar chart
+     */
     this.performanceLabels = [
       "Cardio",
       "Energy",
@@ -25,7 +35,7 @@ export default class FormatChartData {
    *Returns a formatted array for the gauge chart
    *
    * @param score
-   * @returns {number[]}
+   * @returns {Array<{value:number}>}
    */
   setGaugeFormattedData(score: number): {
     value: number;
@@ -37,7 +47,7 @@ export default class FormatChartData {
    *Returns a formatted array for the radar chart
    *
    * @param data
-   * @returns {subject: string; min: number;}[]  Array of the data for the radar chart
+   * @returns {Array<{subject: string; min: number;}>} Array of the data for the radar chart
    */
   setRadarFormattedData(data: any): {
     subject: string;
@@ -66,7 +76,7 @@ export default class FormatChartData {
    *Returns a formatted array for the bars chart
    *
    * @param data
-   * @returns {name: string;min: number;}[]  Array of the data for the line chart
+   * @returns {Array<{name: string;min: number;}>}  Array of the data for the line chart
    */
   setLineFormattedData(data: any): {
     name: string;
@@ -95,7 +105,7 @@ export default class FormatChartData {
    *Returns a formatted array for the line chart
    *
    * @param data
-   * @returns {name: string, kg: number, Kcal: number}[] Array of the data for the bars chart
+   * @returns {Array<{name: string, kg: number, Kcal: number}>} Array of the data for the bars chart
    */
   setBarsFormattedData(data: any): {
     name: string;
@@ -114,7 +124,7 @@ export default class FormatChartData {
       const { kilogram, calories } = sessions;
 
       dataValuesArray.push({
-        name: (i + 1).toString(),
+        name: this.activityXAxis[i].toString(),
         kg: kilogram,
         Kcal: calories,
       });

@@ -12,9 +12,13 @@ import SpinLoader from "../components/SpinLoader/SpinLoader";
 import ApiError from "../components/ApiError/ApiError";
 
 /**
- // INFO: in Next.js, routes are automatically created whenever we add a new page
- //⚠ VERY IMPORTANT: index.tsx → Main page at the route "/"
- //The name of the file must NOT have its name changed
+ * Function component for the main page 
+
+ *INFO: in Next.js, routes are automatically created whenever we add a new page
+ *
+ *⚠ VERY IMPORTANT: index.tsx → Main page at the route "/". 
+ *The name of this file must NOT be changed ⚠
+ *
  *
  * @returns {JSX.Element}
  */
@@ -106,13 +110,6 @@ export default function Home(): JSX.Element {
     const dataErrorMessage =
       fetchedDataArray[0]?.errorMessage ||
       fetchedDataArray[0]?.errorMessage.message;
-
-    console.log(dataErrorMessage);
-    // const dataErrorMessages: any[] = fetchedDataArray.map((fetchedData) => {
-    //   console.log({ dataErrorMessage });
-
-    //   return dataErrorMessage;
-    // });
 
     return <ApiError apiErrorMessage={dataErrorMessage} />;
   }

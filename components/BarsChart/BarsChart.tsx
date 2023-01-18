@@ -15,12 +15,12 @@ import FormatChartData from "../../services/formatChartData";
 //Components
 
 /**
- *
+ * Function componenet for the radar chart
  * @param data
  * @returns {JSX.Element}
  */
 export default function BarsChart({ data }: any): JSX.Element {
-  const chartDataFormatter = new FormatChartData();
+  const chartDataFormatter: FormatChartData = new FormatChartData();
 
   const formattedData: {
     name: string;
@@ -82,9 +82,10 @@ export default function BarsChart({ data }: any): JSX.Element {
 }
 
 /**
- *
+  * Function component for the tooltip of the bars chart
+
  * @param active
- * @returns
+ * @returns {JSX.Element}
  */
 function BarsCustomTooltip(active: any): JSX.Element | null {
   let kilogramData = null;

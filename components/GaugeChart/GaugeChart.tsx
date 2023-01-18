@@ -5,9 +5,10 @@ import { RadialBar, RadialBarChart, Tooltip } from "recharts";
 
 //Utils
 import { toPercent } from "../../react-utils/functions/helperFunctions";
+import FormatChartData from "../../services/formatChartData";
 
 /**
- *
+ * Function componenet for the gauge chart
  * @param data
  * @returns {JSX.Element}
  */
@@ -18,9 +19,11 @@ export default function GaugeChart({ data }: any): JSX.Element {
 
   const stringPercentage: string = toPercent(data);
 
+  const chartFormatter: FormatChartData = new FormatChartData();
+
   const formattedData: {
     value: number;
-  }[] = [{ value: percentageValue }];
+  }[] = chartFormatter.setGaugeFormattedData(data);
 
   const startAngleDegrees: number = 90;
 
@@ -66,9 +69,9 @@ export default function GaugeChart({ data }: any): JSX.Element {
 
 //
 /**
- *
+ * Function component for the tooltip of the gauge chart
  * @param active
- * @returns
+ * @returns {JSX.Element}
  */
 function GaugeCustomTooltip(active: any): JSX.Element | null {
   let scoreData: any = null;

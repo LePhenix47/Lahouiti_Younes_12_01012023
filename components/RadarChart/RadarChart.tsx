@@ -15,12 +15,12 @@ import {
 import FormatChartData from "../../services/formatChartData";
 
 /**
- *
+ * Function componenet for the radar chart
  * @param data
  * @returns {JSX.Element}
  */
 export default function RadarChart({ data }: any): JSX.Element {
-  const chartDataFormatter = new FormatChartData();
+  const chartDataFormatter: FormatChartData = new FormatChartData();
 
   const minValue: number = 0;
 
@@ -66,9 +66,10 @@ export default function RadarChart({ data }: any): JSX.Element {
 }
 
 /**
- *
+  * Function component for the tooltip of the radar chart
+
  * @param active
- * @returns
+ * @returns {JSX.Element}
  */
 function RadarCustomTooltip(active: any): JSX.Element | null {
   let subjectData = null;

@@ -2,7 +2,7 @@
  *
  *Function that prints out a message in the console but with a simpler syntax
  * @param message
- * @returns
+ * @returns {void}
  */
 export function log(message: string): void {
   return console.log(message);
@@ -14,7 +14,7 @@ export function log(message: string): void {
  * @param string string
  * @param option string
  * @throws Text formatting error
- * @returns {string}
+ * @returns {Array<any>} {string}
  */
 export function formatText(string: string, option: string): string | never {
   let formattedOption: string = option.toLowerCase().trim();
@@ -52,7 +52,7 @@ export function formatText(string: string, option: string): string | never {
  *ex: "crème brûlée" → "creme brulee"
  *
  * @param string string to be normalized
- * @returns {string || undefined}
+ * @returns  {string || undefined}
  */
 export function normalizeString(string: string): string | undefined {
   if (typeof string !== "string") {
@@ -68,9 +68,9 @@ export function normalizeString(string: string): string | undefined {
  *Splits a string on a character, word or regular expression
  *ex: Split on every space → "hello world" → ["hello", "world"]
  *
- * @param string string
- * @param character string
- * @returns {string[]}
+ * @param string
+ * @param character
+ * @returns {Array<string>}
  */
 export function splitString(
   string: string,
@@ -84,7 +84,7 @@ export function splitString(
  *ex: "testColor" → ["test","Color"] → ["test", "color"] → "test-color"
  *
  * @param string string
- * @returns {string}
+ * @returns {Array<any>} {string}
  */
 export function splitOnUpperCase(string: string): string {
   //Regex for all the uppercase letters
@@ -109,7 +109,7 @@ export function splitOnUpperCase(string: string): string {
  *Retrieves the values of an object inside an array
  *
  * @param object
- * @returns {any[]}
+ * @returns {Array<any>}
  */
 export function getObjectValues(object: object): any[] {
   const objectIsDefined: boolean = !!object;
@@ -124,7 +124,7 @@ export function getObjectValues(object: object): any[] {
  *Retrieves the properties of an object inside an array
  *
  * @param object
- * @returns {any[]}
+ * @returns {Array<any>}
  */
 export function getObjectProperties(object: object): any[] {
   const objectIsDefined: boolean = !!object;

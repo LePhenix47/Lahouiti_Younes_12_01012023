@@ -13,6 +13,9 @@ export default class AppService {
 
   constructor() {
     //Back-end API to fetch data
+    /**
+     * @property {string} urlAPI url of the API
+     */
     // this.urlAPI = "http://localhost:4200/user";
 
     //Local Next.js API to fetch data
