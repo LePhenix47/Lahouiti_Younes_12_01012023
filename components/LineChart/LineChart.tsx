@@ -23,6 +23,10 @@ import FormatChartData from "../../services/formatChartData";
  * @returns {JSX.Element}
  */
 export default function LineChart({ data }: any): JSX.Element {
+  /**
+   * See {@link FormatChartData}
+   */
+
   const chartDataFormatter: FormatChartData = new FormatChartData();
 
   const formattedData: {

@@ -19,6 +19,10 @@ export default function GaugeChart({ data }: any): JSX.Element {
 
   const stringPercentage: string = toPercent(data);
 
+  /**
+   * See {@link FormatChartData}
+   */
+
   const chartFormatter: FormatChartData = new FormatChartData();
 
   const formattedData: {

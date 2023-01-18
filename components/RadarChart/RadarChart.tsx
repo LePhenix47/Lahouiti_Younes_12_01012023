@@ -20,6 +20,10 @@ import FormatChartData from "../../services/formatChartData";
  * @returns {JSX.Element}
  */
 export default function RadarChart({ data }: any): JSX.Element {
+  /**
+   * See {@link FormatChartData}
+   */
+
   const chartDataFormatter: FormatChartData = new FormatChartData();
 
   const minValue: number = 0;
