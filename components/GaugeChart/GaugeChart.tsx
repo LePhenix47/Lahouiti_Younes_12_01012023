@@ -8,8 +8,8 @@ import { toPercent } from "../../react-utils/functions/helperFunctions";
 import FormatChartData from "../../services/formatChartData";
 
 /**
- * Function componenet for the gauge chart
- * @param data
+ * Function component for the gauge chart
+ * @param data Data from the general data
  * @returns {JSX.Element}
  */
 export default function GaugeChart({ data }: any): JSX.Element {

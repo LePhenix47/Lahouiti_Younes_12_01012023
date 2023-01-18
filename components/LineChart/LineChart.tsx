@@ -18,8 +18,8 @@ import {
 import FormatChartData from "../../services/formatChartData";
 
 /**
- * Function componenet for the line chart
- * @param data
+ * Function component for the line chart
+ * @param data Data from the average sessions data
  * @returns {JSX.Element}
  */
 export default function LineChart({ data }: any): JSX.Element {

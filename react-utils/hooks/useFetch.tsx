@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 /*
  * Fetches data from an API and returns the data
  *
- * @param url
- * @returns { data: any isLoading: boolean hasError: boolean errorMessage: string}
+ * @param url URL of the API
+ * @returns { data: any isLoading: boolean hasError: boolean errorMessage: string} Returns the data
  */
 export function useFetch(url: string): {
   data: any;
