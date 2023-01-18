@@ -17,6 +17,11 @@ import {
 //Services
 import FormatChartData from "../../services/formatChartData";
 
+/**
+ *
+ * @param data
+ * @returns {JSX.Element}
+ */
 export default function LineChart({ data }: any): JSX.Element {
   const chartDataFormatter = new FormatChartData();
   // console.log({ data });
@@ -104,9 +109,14 @@ export default function LineChart({ data }: any): JSX.Element {
   );
 }
 
-function LineCustomTooltip(active: any): any {
+/**
+ *
+ * @param active
+ * @returns
+ */
+function LineCustomTooltip(active: any): JSX.Element | null {
   if (!active.payload) {
-    return;
+    return null;
   }
 
   let activityData = null;

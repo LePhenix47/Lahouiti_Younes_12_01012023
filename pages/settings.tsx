@@ -5,6 +5,10 @@ import React from "react";
 //Components
 import WorkInProgress from "../components/WorkInProgress/WorkInProgress";
 
+/**
+ * Page for the settings
+ * @returns {JSX.Element}
+ */
 export default function Settings(): JSX.Element {
   return (
     <>

@@ -6,6 +6,11 @@ import { RadialBar, RadialBarChart, Tooltip } from "recharts";
 //Utils
 import { toPercent } from "../../react-utils/functions/helperFunctions";
 
+/**
+ *
+ * @param data
+ * @returns {JSX.Element}
+ */
 export default function GaugeChart({ data }: any): JSX.Element {
   const percentTester: number = 1;
 
@@ -60,6 +65,11 @@ export default function GaugeChart({ data }: any): JSX.Element {
 }
 
 //
+/**
+ *
+ * @param active
+ * @returns
+ */
 function GaugeCustomTooltip(active: any): JSX.Element | null {
   let scoreData: any = null;
 

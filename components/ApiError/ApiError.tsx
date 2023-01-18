@@ -2,14 +2,22 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
 
+/**
+ *
+ * @param param0
+ * @returns
+ */
 export default function ApiError({ apiErrorMessage }: any): JSX.Element {
   const errorMessage = apiErrorMessage?.message || apiErrorMessage;
   console.log({ errorMessage });
 
   const router = useRouter();
 
+  /**
   //Function that reloads the page
-  function refreshPage() {
+   * 
+   */
+  function refreshPage(): void {
     router.reload();
   }
 

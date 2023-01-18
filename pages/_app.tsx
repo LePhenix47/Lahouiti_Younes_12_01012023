@@ -10,9 +10,13 @@ import Container from "../components/Container/Container";
 //Next
 
 //Utils
-//Root component, every page created by Next.js will go through here
-//Works like the ReactDOM.Render in Create React App
 
+/**
+ *
+ * This is the root component, every page created by Next.js will go through here
+ * Works like the ReactDOM.Render in Create React App
+ * @returns {JSX.Element}
+ */
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <Container>

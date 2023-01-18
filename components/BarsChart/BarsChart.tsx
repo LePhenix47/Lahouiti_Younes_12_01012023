@@ -14,6 +14,11 @@ import FormatChartData from "../../services/formatChartData";
 
 //Components
 
+/**
+ *
+ * @param data
+ * @returns {JSX.Element}
+ */
 export default function BarsChart({ data }: any): JSX.Element {
   const chartDataFormatter = new FormatChartData();
 
@@ -76,7 +81,12 @@ export default function BarsChart({ data }: any): JSX.Element {
   );
 }
 
-function BarsCustomTooltip(active: any): any {
+/**
+ *
+ * @param active
+ * @returns
+ */
+function BarsCustomTooltip(active: any): JSX.Element | null {
   let kilogramData = null;
   let caloriesData = null;
 

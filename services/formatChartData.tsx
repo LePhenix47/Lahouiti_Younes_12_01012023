@@ -1,3 +1,6 @@
+/**
+ *@class Class to format the data for the different charts
+ */
 export default class FormatChartData {
   //Local variables
 
@@ -18,14 +21,24 @@ export default class FormatChartData {
     ];
   }
 
-  //Returns a formatted array for the gauge chart
+  /**
+   *Returns a formatted array for the gauge chart
+   *
+   * @param score
+   * @returns {number[]}
+   */
   setGaugeFormattedData(score: number): {
     value: number;
   }[] {
     return [{ value: score * 100 }];
   }
 
-  //Returns a formatted array for the radar chart
+  /**
+   *Returns a formatted array for the radar chart
+   *
+   * @param data
+   * @returns {subject: string; min: number;}[]  Array of the data for the radar chart
+   */
   setRadarFormattedData(data: any): {
     subject: string;
     grade: number;
@@ -49,7 +62,12 @@ export default class FormatChartData {
     return dataValuesArray;
   }
 
-  //Returns a formatted array for the line and bars chart
+  /**
+   *Returns a formatted array for the bars chart
+   *
+   * @param data
+   * @returns {name: string;min: number;}[]  Array of the data for the line chart
+   */
   setLineFormattedData(data: any): {
     name: string;
     min: number;
@@ -73,7 +91,12 @@ export default class FormatChartData {
     return dataValuesArray;
   }
 
-  //Returns a formatted array for the line and bars chart
+  /**
+   *Returns a formatted array for the line chart
+   *
+   * @param data
+   * @returns {name: string, kg: number, Kcal: number}[] Array of the data for the bars chart
+   */
   setBarsFormattedData(data: any): {
     name: string;
     kg: number;

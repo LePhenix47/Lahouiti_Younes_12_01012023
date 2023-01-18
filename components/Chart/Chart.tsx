@@ -8,6 +8,12 @@ import LineChart from "../LineChart/LineChart";
 import RadarChart from "../RadarChart/RadarChart";
 
 //
+
+/**
+ *
+ * @param data
+ * @returns {JSX.Element}
+ */
 export default function Chart({
   chartType,
   chartData,
@@ -15,7 +21,6 @@ export default function Chart({
   chartType: string;
   chartData: any;
 }): JSX.Element | null {
-  // const chartIsBarChart = chartType.includes("bar");
   const [initialRenderComplete, setInitialRenderComplete] =
     useState<boolean>(false);
 

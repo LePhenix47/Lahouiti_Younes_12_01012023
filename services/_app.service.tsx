@@ -4,7 +4,9 @@
 import { useFetch } from "../react-utils/hooks/useFetch";
 import { dataType } from "../react-utils/types/dataType";
 
-//This class contains the function call to the APIs
+/**
+ *@class Class containing the functions to call the different APIs routes
+ */
 export default class AppService {
   //Local variables
   urlAPI: string;
@@ -20,7 +22,12 @@ export default class AppService {
     this.urlAPI = "https://lahouiti-younes-p12.vercel.app/api/user";
   }
 
-  //  Retrieves information from the user
+  /**
+   * Retrieves information from the user
+   *
+   * @param {number} id  id of the user
+   * @returns {any}  Returns the general data of the user
+   */
   getUserInfo(id: number): dataType {
     // const data: dataType = useFetch(`${this.urlAPI}/${id}`);
 
@@ -29,7 +36,12 @@ export default class AppService {
     return data;
   }
 
-  // Retrieves the user's activity day by day with kilograms and calories.
+  /**
+   * Retrieves the user's activity day by day with kilograms and calories.
+   *
+   * @param {number} id id of the user
+   * @returns {any}  Returns the activity data of the user
+   */
   getActivityInfo(id: number): dataType {
     // const data: dataType = useFetch(`${this.urlAPI}/${id}/activity`);
 
@@ -37,7 +49,12 @@ export default class AppService {
     return data;
   }
 
-  // Retrieves the average sessions of the user per day. The week starts on Monday.
+  /**
+   * Retrieves the average sessions of the user per day. The week starts on Monday.
+   *
+   * @param {number} id id of the user
+   * @returns {any}  Returns the session data of the user
+   */
   getSessionsInfo(id: number): dataType {
     // const data: dataType = useFetch(`${this.urlAPI}/${id}/average-sessions`);
 
@@ -46,7 +63,12 @@ export default class AppService {
     return data;
   }
 
-  // Retrieves the user's performance (energy, endurance, etc.).
+  /**
+   * Retrieves the user's performance (energy, endurance, etc.).
+   *
+   * @param {number} id id of the user
+   * @returns {any}  Returns the performance data of the user
+   */
   getPerformanceInfo(id: number): dataType {
     // const data: dataType = useFetch(`${this.urlAPI}/${id}/performance`);
 

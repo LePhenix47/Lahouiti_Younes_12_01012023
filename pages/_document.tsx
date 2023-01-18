@@ -1,7 +1,11 @@
 //Next
 import { Html, Head, Main, NextScript } from "next/document";
 
-//A custom Document can update the <html> and <body> tags used to render a Page
+/**
+ //A custom Document can update the <html> and <body> tags used to render a Page
+ *
+ * @returns {JSX.Element}
+ */
 export default function Document(): JSX.Element {
   return (
     <Html lang="fr">

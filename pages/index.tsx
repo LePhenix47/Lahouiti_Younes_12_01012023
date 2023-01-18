@@ -11,10 +11,13 @@ import AppService from "../services/_app.service";
 import SpinLoader from "../components/SpinLoader/SpinLoader";
 import ApiError from "../components/ApiError/ApiError";
 
-// INFO: in Next.js, routes are automatically created whenever we add a new page
-//⚠ VERY IMPORTANT: index.tsx → Main page at the route "/"
-//The name of the file must NOT have its name changed
-
+/**
+ // INFO: in Next.js, routes are automatically created whenever we add a new page
+ //⚠ VERY IMPORTANT: index.tsx → Main page at the route "/"
+ //The name of the file must NOT have its name changed
+ *
+ * @returns {JSX.Element}
+ */
 export default function Home(): JSX.Element {
   let userId = 12;
 

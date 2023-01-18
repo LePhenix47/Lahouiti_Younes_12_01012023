@@ -5,6 +5,10 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 
+/**
+ *Page shown when the route path does not exist
+ * @returns {JSX.Element}
+ */
 export default function Error404(): JSX.Element {
   return (
     <>

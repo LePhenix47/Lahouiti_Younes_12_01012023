@@ -5,6 +5,10 @@ import React from "react";
 //Components
 import WorkInProgress from "../components/WorkInProgress/WorkInProgress";
 
+/**
+ * Page for the profile of the user
+ * @returns {JSX.Element}
+ */
 export default function ProfilePage(): JSX.Element {
   return (
     <>

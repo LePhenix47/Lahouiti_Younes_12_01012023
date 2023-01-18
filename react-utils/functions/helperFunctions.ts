@@ -1,9 +1,21 @@
-//Function that prints out a message in the console but with a simpler syntax
+/**
+ *
+ *Function that prints out a message in the console but with a simpler syntax
+ * @param message
+ * @returns
+ */
 export function log(message: string): void {
   return console.log(message);
 }
 
-//Function that formats text in 3 cases: lowercase, uppercase and titlecase
+/**
+ *
+ *Function that formats text in 3 cases: lowercase, uppercase and titlecase
+ * @param string string
+ * @param option string
+ * @throws Text formatting error
+ * @returns {string}
+ */
 export function formatText(string: string, option: string): string | never {
   let formattedOption: string = option.toLowerCase().trim();
 
@@ -35,20 +47,31 @@ export function formatText(string: string, option: string): string | never {
   }
 }
 
-//Funtion that replaces letters with accents by their "non-accented" counter-part
-//ex: "crème brûlée" → "creme brulee"
+/**
+ *Funtion that replaces letters with accents by their "non-accented" counter-part
+ *ex: "crème brûlée" → "creme brulee"
+ *
+ * @param string string to be normalized
+ * @returns {string || undefined}
+ */
 export function normalizeString(string: string): string | undefined {
   if (typeof string !== "string") {
     log("Value passed in argument is not a string !");
     return;
   }
   return string
-    .normalize("NFD") // returns the unicode NORMALIZATION FORM of the string using a canonical DECOMPOSITION (NFD).
+    .normalize("NFD") //returns the unicode NORMALIZATION FORM of the string using a canonical DECOMPOSITION (NFD).
     .replace(/[\u0300-\u036f]/g, "");
 }
 
-//Splits a string on a character, word or regular expression
-//ex: Split on every space → "hello world" → ["hello", "world"]
+/**
+ *Splits a string on a character, word or regular expression
+ *ex: Split on every space → "hello world" → ["hello", "world"]
+ *
+ * @param string string
+ * @param character string
+ * @returns {string[]}
+ */
 export function splitString(
   string: string,
   character: string | RegExp
@@ -56,8 +79,13 @@ export function splitString(
   return string.split(character);
 }
 
-//Split a string into an array separating each word with an uppercase on it
-//ex: "testColor" → ["test","Color"] → ["test", "color"] → "test-color"
+/**
+ *Split a string into an array separating each word with an uppercase on it
+ *ex: "testColor" → ["test","Color"] → ["test", "color"] → "test-color"
+ *
+ * @param string string
+ * @returns {string}
+ */
 export function splitOnUpperCase(string: string): string {
   //Regex for all the uppercase letters
   const uppercaseLettersREGEX: RegExp = /(?=[A-Z])/;
@@ -77,7 +105,12 @@ export function splitOnUpperCase(string: string): string {
   return formattedString;
 }
 
-//Retrieves the values of an object inside an array
+/**
+ *Retrieves the values of an object inside an array
+ *
+ * @param object
+ * @returns {any[]}
+ */
 export function getObjectValues(object: object): any[] {
   const objectIsDefined: boolean = !!object;
 
@@ -87,7 +120,12 @@ export function getObjectValues(object: object): any[] {
   return [];
 }
 
-//Retrieves the properties of an object inside an array
+/**
+ *Retrieves the properties of an object inside an array
+ *
+ * @param object
+ * @returns {any[]}
+ */
 export function getObjectProperties(object: object): any[] {
   const objectIsDefined: boolean = !!object;
 
@@ -97,18 +135,28 @@ export function getObjectProperties(object: object): any[] {
   return [];
 }
 
-//Returns a string with a '%' in the end of the number inputted
-export function toPercent(number: number, option?: any): string {
+/**
+ *Returns a string with a '%' in the end of the number inputted
+ *
+ * @param number
+ * @returns {string}
+ */
+export function toPercent(number: number): string {
   return number.toLocaleString(undefined, {
     style: "percent",
     minimumFractionDigits: 0,
   });
 }
 
-//Formats a number by separating every thousand with a format from the user's locale
-//example:
-//The user lives in Italy and we have: const number = 1_930 →returns "1.930"
-//If they lived in India and we have: const number = 1_930 →returns "1,930"
+/**
+ *Formats a number by separating every thousand with a format from the user's locale
+ *example:
+ *The user lives in Italy and we have: const number = 1_930 → returns "1.930"
+ *If they lived in the US and we have: const number = 1_930 → returns "1,930"
+ *
+ * @param number
+ * @returns {string}
+ */
 export function numberSeparatorLocale(number: number): string {
   const formatter: Intl.NumberFormat = new Intl.NumberFormat(undefined, {
     maximumSignificantDigits: 3,

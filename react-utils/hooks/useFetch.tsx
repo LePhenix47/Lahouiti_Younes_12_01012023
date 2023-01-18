@@ -1,5 +1,11 @@
 import { useState, useEffect } from "react";
 
+/*
+ * Fetches data from an API and returns the data
+ *
+ * @param url
+ * @returns { data: any isLoading: boolean hasError: boolean errorMessage: string}
+ */
 export function useFetch(url: string): {
   data: any;
   isLoading: boolean;
@@ -23,7 +29,9 @@ export function useFetch(url: string): {
     if (!url) {
       return;
     }
-
+    /**
+     *Fetches data from an API
+     */
     async function fetchData() {
       try {
         const response: Response = await fetch(url);
