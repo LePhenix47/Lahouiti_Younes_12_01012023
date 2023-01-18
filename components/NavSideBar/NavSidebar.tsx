@@ -7,6 +7,11 @@ import Link from "next/link";
 //Components
 import SidebarIcon from "../SidebarIcon/SidebarIcon";
 
+/**
+ * Function component for the sidebar of the page
+ * @returns {JSX.Element}
+ */
+
 export default function NavSidebar(): JSX.Element {
   const currentYear: number = new Date().getFullYear();
   return (

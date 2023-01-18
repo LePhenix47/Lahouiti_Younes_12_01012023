@@ -1,5 +1,10 @@
 import React from "react";
 
+/**
+ * Function component for the spin loader when data is loading
+ * @returns {JSX.Element}
+ */
+
 export default function SpinLoader(): JSX.Element {
   return (
     <section className="spin-loader">

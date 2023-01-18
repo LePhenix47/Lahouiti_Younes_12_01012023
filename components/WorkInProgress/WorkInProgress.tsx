@@ -1,5 +1,10 @@
 import React from "react";
 
+/**
+ * Function component for a page that does not exist yet
+ * @returns {JSX.Element}
+ */
+
 export default function WorkInProgress(): JSX.Element {
   return (
     <section className="work-in-progress">

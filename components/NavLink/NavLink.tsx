@@ -1,6 +1,11 @@
 //React
 import { useRouter } from "next/router";
 
+/**
+ * Function component for the radar chart
+ * @param {children: any; href: string;} props Unknown elements inside the component and the props of the route path
+ * @returns {JSX.Element}
+ */
 export default function NavLink({
   children,
   href,
@@ -11,10 +16,11 @@ export default function NavLink({
   const router = useRouter();
 
   const linkIsActive: boolean = router.asPath === href;
-
-  /* 
-  
-  */
+  /**
+   *
+   * @param {any} event Takes in parameters the click event
+   * @returns {void}
+   */
   function pushHref(event: any): void {
     //Prevents the page from reloading when switching page
     event.preventDefault();

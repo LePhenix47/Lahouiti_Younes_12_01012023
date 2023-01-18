@@ -18,6 +18,11 @@ import {
   numberSeparatorLocale,
 } from "../../react-utils/functions/helperFunctions";
 
+/**
+ * Function component for the radar chart
+ * @param {{dataType: string, keyCardData:any}} props Data from the general data
+ * @returns {JSX.Element}
+ */
 export default function KeyDataCard({
   dataType,
   keyCardData,

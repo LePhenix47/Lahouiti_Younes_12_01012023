@@ -16,7 +16,7 @@ import FormatChartData from "../../services/formatChartData";
 
 /**
  * Function component for the radar chart
- * @param data Data from the activity data
+ * @param {any} data Data from the activity data
  * @returns {JSX.Element}
  */
 export default function BarsChart({ data }: any): JSX.Element {

@@ -11,7 +11,7 @@ import RadarChart from "../RadarChart/RadarChart";
 
 /**
  * Function component to display the correct chart depending on its type
- * @param data
+ * @param {any} data
  * @returns {JSX.Element}
  */
 export default function Chart({

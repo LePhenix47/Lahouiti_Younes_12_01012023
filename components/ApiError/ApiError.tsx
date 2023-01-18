@@ -4,8 +4,8 @@ import React from "react";
 
 /**
  *Function component to display the error message of the API
- * @param param0
- * @returns
+ * @param {any} apiErrorMessage Error message from the API
+ * @returns {JSX.Element}
  */
 export default function ApiError({ apiErrorMessage }: any): JSX.Element {
   const errorMessage = apiErrorMessage?.message || apiErrorMessage;

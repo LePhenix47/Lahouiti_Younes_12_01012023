@@ -10,6 +10,10 @@ import SportSeeLogo from "../../public/images/icons/sport-see-full-LOGO.svg";
 //Components
 import NavLink from "../NavLink/NavLink";
 
+/**
+ * Function component for the header of the page
+ * @returns {JSX.Element}
+ */
 export default function Header(): JSX.Element {
   return (
     <header className="header">
